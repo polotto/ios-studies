@@ -31,3 +31,10 @@ pod cache clean
 ## architectures
 - VIPER
 - MVP
+
+## XCode tips
+- https://www.youtube.com/watch?v=1uVnWbygg_c&feature=youtu.be
+- https://www.youtube.com/watch?v=38LNXk_oTak&feature=youtu.be
+
+## Tutorial
+- 
