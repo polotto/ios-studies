@@ -129,6 +129,7 @@ class Cachorro {
 var cachorro = Cachorro(cor: "Preto")
 print("cachorro latir: " + cachorro.latir())
 
+// herança
 class Animal {
     var cor = "marrom"
     
@@ -138,7 +139,34 @@ class Animal {
 }
 
 class Cachorro2: Animal {
+    func latir() -> String {
+        return "latir"
+    }
 }
 
 class Passaro: Animal {
+    func voar() -> String {
+        return "voar"
+    }
 }
+
+class Papagaio: Passaro {
+    func repetir() -> String {
+        return "repetir"
+    }
+}
+
+// cachorro 2
+var cachorro2 = Cachorro2()
+cachorro2.dormir()
+cachorro2.latir()
+
+// passaro
+var passaro = Passaro()
+passaro.dormir()
+passaro.voar()
+
+// papagaio
+var papagaio = Papagaio()
+papagaio.repetir()
+
