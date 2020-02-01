@@ -183,3 +183,10 @@ guard let strUnwrapped = str2 else { return }
 ## Content hugging and compression
 
 ![Content hugging and compression](./img/content-hugging-and-compression.png)
+
+
+## Visual format language
+
+![Visual format language](./img/visual-format-language-concepts.png)
+
+![Visual format examples](./img/visual-format-language-examples.png)
