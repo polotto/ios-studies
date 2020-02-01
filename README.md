@@ -98,6 +98,8 @@ po yourVariable
 
 - cmd + shift + O : open file quickly
 
+- cmd + option + A : add file to the project
+
 - cmd + D : duplicate element
 
 - cmd + click : action: rename
@@ -107,3 +109,50 @@ po yourVariable
 - cmd + O : open project/file
 
 - cmd + shift + N : new project
+
+
+## Swift
+
+### null check
+- https://stackoverflow.com/questions/54966200/does-swift-have-standard-scope-functions-like-in-kotlin
+
+#### extension
+```swift
+extension Optional {
+    func `let`(do: (Wrapped)->()) {
+        guard let v = self else { return }
+        `do`(v)
+    }
+}
+
+var str: String? = "text"
+str.let {
+    print( $0 ) // prints `text`
+}
+str = nil
+
+str.let {
+    print( $0 ) // not executed if str == nil
+}
+```
+
+#### map
+```swift
+// prints 123
+let str1 : String? = "123"
+str1.map { print($0) }
+
+// doesn't print anything
+let str2 : String? = nil
+str2.map { print($0) }
+```
+
+#### idiomatic
+```swift
+var str: String? = "123"
+if let s = str { 
+    print(s) 
+}
+
+let str2: String? = "123"
+guard let strUnwrapped = str2 else { return }
