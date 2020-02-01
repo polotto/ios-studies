@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ConstraintsRuntimeUpdate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vw7-aK-HqZ" userLabel="yellowView">
+                                <rect key="frame" x="0.0" y="82" width="414" height="272.5"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcf-rx-2OL" userLabel="greenView">
+                                <rect key="frame" x="414" y="82" width="414" height="272.5"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0b2-b2-5U7" userLabel="blueView">
+                                <rect key="frame" x="0.0" y="862" width="414" height="448"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIg-xU-4mV">
+                                <rect key="frame" x="165" y="44" width="84" height="30"/>
+                                <state key="normal" title="Switch View"/>
+                                <connections>
+                                    <action selector="didTapSwitchView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3HX-g6-ZWX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gcf-rx-2OL" firstAttribute="height" secondItem="Vw7-aK-HqZ" secondAttribute="height" id="0UM-jm-kfh"/>
+                            <constraint firstItem="Gcf-rx-2OL" firstAttribute="centerY" secondItem="Vw7-aK-HqZ" secondAttribute="centerY" id="1uG-Gt-skA"/>
+                            <constraint firstItem="dIg-xU-4mV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3hG-2g-pxz"/>
+                            <constraint firstItem="Vw7-aK-HqZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" identifier="1" id="BxE-5s-6LX"/>
+                            <constraint firstItem="Vw7-aK-HqZ" firstAttribute="top" secondItem="dIg-xU-4mV" secondAttribute="bottom" constant="8" id="DoA-ct-l4W"/>
+                            <constraint firstItem="0b2-b2-5U7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="FLs-Vh-rab"/>
+                            <constraint firstItem="dIg-xU-4mV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Wdj-0x-1F4"/>
+                            <constraint firstItem="Gcf-rx-2OL" firstAttribute="leading" secondItem="Vw7-aK-HqZ" secondAttribute="trailing" id="eTk-2R-Arv"/>
+                            <constraint firstItem="Vw7-aK-HqZ" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="1:3" id="iIo-4T-HRd"/>
+                            <constraint firstItem="Gcf-rx-2OL" firstAttribute="width" secondItem="Vw7-aK-HqZ" secondAttribute="width" id="jgp-t0-bZg"/>
+                            <constraint firstItem="0b2-b2-5U7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rIA-IM-eUh"/>
+                            <constraint firstItem="Vw7-aK-HqZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s7R-oi-dth"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0b2-b2-5U7" secondAttribute="top" id="wHB-gB-dVG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0b2-b2-5U7" secondAttribute="trailing" id="xX2-jj-zeb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="blueView" destination="0b2-b2-5U7" id="uWj-sN-60B"/>
+                        <outlet property="blueViewTopConstraint" destination="wHB-gB-dVG" id="PJp-KI-7aC"/>
+                        <outlet property="yellowViewLeadingConstraint" destination="s7R-oi-dth" id="e1Q-zU-98a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+</document>
