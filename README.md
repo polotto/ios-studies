@@ -173,3 +173,8 @@ guard let strUnwrapped = str2 else { return }
 ![iPad multitasking](./img/size-classes-ipad-multitasking.png)
 
 ![XCode](./img/size-classes-xcode.png)
+
+
+## Content hugging and compression
+
+![Content hugging and compression](./img/content-hugging-and-compression.png)
