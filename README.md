@@ -46,6 +46,7 @@ pod cache clean
 - https://www.youtube.com/watch?v=38LNXk_oTak&feature=youtu.be
 - https://supereasyapps.com/blog/2014/9/15/14-xcode-time-saving-shortcuts-memorize-and-improve-your-productivity
 - https://medium.com/@gabriel_lewis/tips-to-improve-your-xcode-workflow-9c2bdda1b26f
+- fix XCode odd errors: https://github.com/codepath/ios_guides/wiki/Fixing-Xcode
 
 ### track build times
 ```
@@ -101,6 +102,7 @@ po yourVariable
 - cmd + option + A : add file to the project
 
 - cmd + D : duplicate element
+- cmd + = : resize UI(Button|Label) element to fit the text inside
 
 - cmd + click : action: rename
 
@@ -110,6 +112,10 @@ po yourVariable
 
 - cmd + shift + N : new project
 
+- ctrl + cmd + j : jump to Definition
+- ctrl + cmd + Forward Arrow or Ctrl + Command + Back Arrow : back and forward
+- ctrl + cmd + ' : auto fix next error
+- ctrl + cmd + " : auto fix prev error
 
 ## Swift
 
@@ -156,3 +162,14 @@ if let s = str {
 
 let str2: String? = "123"
 guard let strUnwrapped = str2 else { return }
+```
+
+## Size classes
+
+![iPhone](./img/size-classes-iphone.png)
+
+![iPad](./img/size-classes-ipad.png)
+
+![iPad multitasking](./img/size-classes-ipad-multitasking.png)
+
+![XCode](./img/size-classes-xcode.png)
