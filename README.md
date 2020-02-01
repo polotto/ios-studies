@@ -104,6 +104,11 @@ po yourVariable
 - cmd + D : duplicate element
 - cmd + = : resize UI(Button|Label) element to fit the text inside
 
+- ctrl + I : format code
+- cmd + A : select all
+- cmd + C : copy
+- cmd + V : paste
+
 - cmd + click : action: rename
 
 - cmd + shift + 0(zero) : documentation and reference
