@@ -70,13 +70,13 @@ class ViewController: UIViewController {
         let bottomtInset = safeAreaInsets.bottom > 0 ? safeAreaInsets.bottom : Padding.default
         
         let viewsDict: [String: Any] = [
-            "titleLabel": titleLabel,
+            "titleLabel": titleLabel!,
             "mainButton": mainButton,
             "myView": myView,
-            "view": view
+            "view": view!
         ]
         
-        let mstrics: [String: CGFloat] = [
+        let metrics: [String: CGFloat] = [
             "defaultPadding": Padding.default,
             "leftInset": leftInset,
             "rightInset": rightInset,
@@ -86,9 +86,18 @@ class ViewController: UIViewController {
         
         let verticalConstraints = NSLayoutConstraint.constraints(
             withVisualFormat: "V:|-topInset-[titleLabel]-40-[mainButton]-40-[myView]-bottomtInset-|",
-            options: <#T##NSLayoutConstraint.FormatOptions#>,
-            metrics: <#T##[String : Any]?#>,
-            views: <#T##[String : Any]#>)
+            options: [.alignAllCenterX], // sempre funciona perpendicular ao sentido, para centralizar em X, precisa conficurar no Vertical
+            metrics: metrics,
+            views: viewsDict)
+        viewConstraints += verticalConstraints
+        
+        let mainButtonHorizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-leftInset-[mainButton]-rightInset-|", options: [], metrics: metrics, views: viewsDict)
+        viewConstraints += mainButtonHorizontalConstraints
+        
+        let myViewHorizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-leftInset-[myView]-rightInset-|", options: [], metrics: metrics, views: viewsDict)
+        viewConstraints += myViewHorizontalConstraints
+        
+        NSLayoutConstraint.activate(viewConstraints)
     }
     
     @objc func buttonAction(sender: UIButton) {

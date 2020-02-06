@@ -41,12 +41,16 @@ pod cache clean
 - cmd + ` : alternate between same app windows
 - cmd + TAB : alternate between apps
 
-### XCode tips
-- https://www.youtube.com/watch?v=1uVnWbygg_c&feature=youtu.be
-- https://www.youtube.com/watch?v=38LNXk_oTak&feature=youtu.be
-- https://supereasyapps.com/blog/2014/9/15/14-xcode-time-saving-shortcuts-memorize-and-improve-your-productivity
-- https://medium.com/@gabriel_lewis/tips-to-improve-your-xcode-workflow-9c2bdda1b26f
+### tutorials and tips
+- 10 Xcode Tips & Tricks - Xcode 10: https://www.youtube.com/watch?v=1uVnWbygg_c&feature=youtu.be
+- 20 Xcode Tips & Tricks - Updated for Xcode 9 - 2017: https://www.youtube.com/watch?v=38LNXk_oTak&feature=youtu.be
+- Xcode shortcut: https://supereasyapps.com/blog/2014/9/15/14-xcode-time-saving-shortcuts-memorize-and-improve-your-productivity
+- Improve XCode workflow: https://medium.com/@gabriel_lewis/tips-to-improve-your-xcode-workflow-9c2bdda1b26f
 - fix XCode odd errors: https://github.com/codepath/ios_guides/wiki/Fixing-Xcode
+- Swiftui tutorial: https://developer.apple.com/tutorials/swiftui/
+- iOS Programming roadmap: https://www.reddit.com/r/iOSProgramming/comments/82w6qa/2018_roadmap_to_ios_development/
+- lldb: https://medium.com/flawless-app-stories/debugging-swift-code-with-lldb-b30c5cf2fd49
+- lldb wwdc2019: https://developer.apple.com/videos/play/wwdc2019/429/
 
 ### track build times
 ```
@@ -102,6 +106,7 @@ po yourVariable
 - cmd + option + A : add file to the project
 
 - cmd + D : duplicate element
+- option + click: show variable type
 - cmd + = : resize UI(Button|Label) element to fit the text inside
 
 - ctrl + I : format code
