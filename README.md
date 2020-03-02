@@ -123,6 +123,7 @@ po yourVariable
 - cmd + shift + N : new project
 
 - ctrl + cmd + j : jump to Definition
+- cmd + shift + j : reveal in project navigator
 - ctrl + cmd + Forward Arrow or Ctrl + Command + Back Arrow : back and forward
 - ctrl + cmd + ' : auto fix next error
 - ctrl + cmd + " : auto fix prev error
