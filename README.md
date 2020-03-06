@@ -2,6 +2,9 @@
 
 ## utils
 
+### documentation Swift
+- https://www.appcoda.com/swift-markdown/
+
 ### show hidden files
 ```shell script
 defaults write com.apple.Finder AppleShowAllFiles true
@@ -58,25 +61,25 @@ defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 ```
 
 ### function name place holder
-˜˜˜swift
+```swift
 func <#name#> () {
     print("something")
 }
-˜˜˜
+```
 
 ### warning/error message pattern
-˜˜˜swift
+```swift
 // allow compile
 #warning("example of a message")
 
 // don't allow compile
 #error("some error")
-˜˜˜
+```
 
 ### pring var debug in lldb
-˜˜˜
+```
 po yourVariable
-˜˜˜
+```
 
 ### xcode shortcuts
 - cmd + R : run
@@ -196,3 +199,20 @@ guard let strUnwrapped = str2 else { return }
 ![Visual format language](./img/visual-format-language-concepts.png)
 
 ![Visual format examples](./img/visual-format-language-examples.png)
+
+## iOS snippets
+### enable touch gesture recognizer
+```swift
+#warning("remove after development, created only to test")
+func configureTapEvent() {
+    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(tapGestureRecognizer:)))
+    imageView.isUserInteractionEnabled = true
+    imageView.addGestureRecognizer(tapGestureRecognizer)
+}
+
+#warning("remove after development, created only to test InvoiceCategoryViewController")
+@objc func imageViewTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+    //let vc = SomeViewController()
+    //self.navigationController?.pushViewController(vc, animated: true)
+}
+```
