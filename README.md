@@ -39,7 +39,6 @@ pod cache clean
 - 
 
 ## Tips
-
 ### MacOS shortcuts
 - cmd + ` : alternate between same app windows
 - cmd + TAB : alternate between apps
@@ -131,8 +130,11 @@ po yourVariable
 - ctrl + cmd + ' : auto fix next error
 - ctrl + cmd + " : auto fix prev error
 
-## Swift
+### xcode build time track
+- colocar no terminal: `defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES`
 
+
+## Swift
 ### null check
 - https://stackoverflow.com/questions/54966200/does-swift-have-standard-scope-functions-like-in-kotlin
 
@@ -178,8 +180,8 @@ let str2: String? = "123"
 guard let strUnwrapped = str2 else { return }
 ```
 
-## Size classes
-
+## iOS
+### Size classes
 ![iPhone](./img/size-classes-iphone.png)
 
 ![iPad](./img/size-classes-ipad.png)
@@ -189,18 +191,15 @@ guard let strUnwrapped = str2 else { return }
 ![XCode](./img/size-classes-xcode.png)
 
 
-## Content hugging and compression
-
+### Content hugging and compression
 ![Content hugging and compression](./img/content-hugging-and-compression.png)
 
 
-## Visual format language
-
+### Visual format language
 ![Visual format language](./img/visual-format-language-concepts.png)
 
 ![Visual format examples](./img/visual-format-language-examples.png)
 
-## iOS snippets
 ### enable touch gesture recognizer
 ```swift
 #warning("remove after development, created only to test")
@@ -212,7 +211,47 @@ func configureTapEvent() {
 
 #warning("remove after development, created only to test InvoiceCategoryViewController")
 @objc func imageViewTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-    //let vc = SomeViewController()
-    //self.navigationController?.pushViewController(vc, animated: true)
+    print("tapped")
 }
+```
+
+### circular button
+```swift
+var myButton = UIButton()
+myButton.backgroundColor = .red
+myButton.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
+myButton.clipsToBounds = true
+myButton.layer.cornerRadius = 0.5 * myButton.bounds.size.width
+```
+
+### button click event
+```swift
+var myButton = UIButton()
+myButton.addTarget(self, action: #selector(buttonTap(tapGestureRecognizer:)), for: .touchUpInside)
+
+@objc func buttonTap(tapGestureRecognizer: UITapGestureRecognizer) {
+    print("tapped")
+}
+```
+
+### navitate to another viewController
+```swift
+let vc = SomeViewController()
+self.navigationController?.pushViewController(vc, animated: true)
+```
+
+### code marks
+```swift
+//MARK: some simple mark
+//MARK: - some mark with division
+//FIXME: fix me mark
+//TODO: some to do mark
+#warning("warning mark")
+#error("error mark")
+
+// MARK: - divide this title mark -
+
+// TODO: -
+// TODO: some grouped mark with division
+// TODO: -
 ```
