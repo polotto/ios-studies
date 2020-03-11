@@ -303,3 +303,32 @@ class Date {
 var date = Date.parse("2014-05-20")
 var date = Date.from(year: 2014, month: 05, day: 20)
 ```
+
+### string
+```swift
+let string = "hello Swift"
+if string.contains("Swift") {
+    print("exists")
+}
+```
+
+### return multiple values
+- https://stackoverflow.com/questions/27531195/return-multiple-values-from-a-function-in-swift
+```swif
+func getTime() -> (Int, Int, Int) {
+    ...
+    return ( hour, minute, second)
+}
+
+//Then it's invoked as:
+let (hour, minute, second) = getTime()
+//or:
+let time = getTime()
+println("hour: \(time.0)")
+```
+
+### higher order functions
+- https://medium.com/@abhimuralidharan/higher-order-functions-in-swift-filter-map-reduce-flatmap-1837646a63e8
+```swift
+
+```
