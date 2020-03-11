@@ -255,3 +255,51 @@ self.navigationController?.pushViewController(vc, animated: true)
 // TODO: some grouped mark with division
 // TODO: -
 ```
+
+### group by date
+- https://medium.com/@karsonbraaten/easily-group-objects-by-a-date-property-in-swift-e803d450f30e
+
+```swift
+func groupedEpisodesByMonth(_ episodes: [Episode]) -> [Date: [Episode]] {
+  let empty: [Date: [Episode]] = [:]
+  return episodes.reduce(into: empty) { acc, cur in
+      let components = Calendar.current.dateComponents([.year, .month], from: cur.airDate)
+      let date = Calendar.current.date(from: components)!
+      let existing = acc[date] ?? []
+      acc[date] = existing + [cur]
+  }
+}
+```
+
+### create date from string
+- https://stackoverflow.com/questions/24089999/how-do-you-create-a-swift-date-object
+
+```swift
+class Date {
+
+    class func from(year: Int, month: Int, day: Int) -> Date {
+        let gregorianCalendar = NSCalendar(calendarIdentifier: .gregorian)!
+
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = month
+        dateComponents.day = day
+
+        let date = gregorianCalendar.date(from: dateComponents)!
+        return date
+    }
+
+    class func parse(_ string: String, format: String = "yyyy-MM-dd") -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = NSTimeZone.default
+        dateFormatter.dateFormat = format
+
+        let date = dateFormatter.date(from: string)!
+        return date
+    }
+}
+
+// examples
+var date = Date.parse("2014-05-20")
+var date = Date.from(year: 2014, month: 05, day: 20)
+```
