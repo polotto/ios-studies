@@ -332,3 +332,26 @@ println("hour: \(time.0)")
 ```swift
 
 ```
+
+### rxcocoa
+```swift
+var disposeBagUI: DisposeBag = DisposeBag()
+
+// editing did end keyboard event
+textField.rx
+            .controlEvent(.editingDidEndOnExit)
+            .subscribe(onNext: { [weak self] text in
+                guard let self = self else { return }
+                // do something
+            })
+            .disposed(by: disposeBag)
+
+// get text with debounce 2 secounds
+textField.rx.text
+            .debounce(.seconds(2), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] text in
+                guard let self = self else { return }
+                // do something
+            })
+            .disposed(by: disposeBagUI)
+```
