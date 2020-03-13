@@ -355,3 +355,37 @@ textField.rx.text
             })
             .disposed(by: disposeBagUI)
 ```
+
+### soping functions
+```swift
+//let
+extension Optional {
+    func `let`(do: (Wrapped)->()) {
+        guard let v = self else { return }
+        `do`(v)
+    }
+}
+
+var str: String? = "text"
+str.let {
+    print( $0 ) // prints `text`
+}
+str = nil
+
+str.let {
+    print( $0 ) // not executed if str == nil
+}
+
+
+// with
+//https://www.reddit.com/r/swift/comments/3se0sm/neat_way_to_set_multiple_properties_at_once/
+func with<T>(_ object: T, closure: (T)->()) {
+    closure(object)
+}
+
+with(progressBar) {
+    $0.hidden = false
+    $0.usesThreadedAnimation = true
+    $0.startAnimation(nil)
+}
+```
