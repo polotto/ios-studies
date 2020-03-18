@@ -356,7 +356,7 @@ textField.rx.text
             .disposed(by: disposeBagUI)
 ```
 
-### soping functions
+### sccoping functions
 ```swift
 //let
 extension Optional {
@@ -387,5 +387,52 @@ with(progressBar) {
     $0.hidden = false
     $0.usesThreadedAnimation = true
     $0.startAnimation(nil)
+}
+
+// guard optional
+// https://useyourloaf.com/blog/swift-non-nil-values-in-an-array-of-optionals/
+// https://stackoverflow.com/questions/24035832/function-taking-a-variable-number-of-arguments
+// https://learnappmaking.com/swift-guard-let-statement-how-to/
+private func guardObjects<T>(_ objects: Optional<T>..., clousure: ([T])->()) {
+    for case .none in objects {
+        return
+    }
+    
+    clousure(objects.compactMap({$0}))
+}
+
+private func guardObject<T>(_ object: Optional<T>, clousure: (T)->()) {
+    guard let object = object else { return }
+    clousure(object)
+}
+
+let obj: String? = ""
+guardObject(obj) {
+    print($0)//object unwrapped
+}
+
+guardObjects(obj, obj) {
+    print($0)//1 object unwrapped
+    print($1)//2 object unwrapped
+}
+```
+
+### string operations
+```swift
+private func insertSpaceBetween(_ text: String, spaces: Int = 2) -> String {
+    var spacesString = ""
+    for _ in 0...spaces {
+        spacesString += " "
+    }
+    
+    var finalText = ""
+    if text.count > 1 {
+        for j in 0..<text.count-1 {
+            finalText += text[j] + spacesString
+        }
+        finalText += String(text.last ?? Character(""))
+    }
+    
+    return finalText
 }
 ```
