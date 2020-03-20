@@ -4,6 +4,7 @@
 
 ### documentation Swift
 - https://www.appcoda.com/swift-markdown/
+- https://nshipster.com/swift-documentation/
 
 ### show hidden files
 ```shell script
@@ -359,6 +360,28 @@ textField.rx.text
 ### sccoping functions
 ```swift
 //let
+public extension Optional {
+    /**
+     Unwrap object with `guard`, only call the clousure if the object **is not null**.
+     Example of use:
+     //```swift
+     var obj: String? = "Tom"
+     str.let {
+         print($0) //prints: Tom
+     }
+     
+     str = nil
+     str.let {
+         print($0) //not executed if str == nil
+     }
+     //```
+     */
+    func `let`(clousure: (Wrapped)->()) {
+        guard let self = self else { return }
+        clousure(self)
+    }
+}
+
 extension Optional {
     func `let`(do: (Wrapped)->()) {
         guard let v = self else { return }
@@ -379,7 +402,21 @@ str.let {
 
 // with
 //https://www.reddit.com/r/swift/comments/3se0sm/neat_way_to_set_multiple_properties_at_once/
-func with<T>(_ object: T, closure: (T)->()) {
+
+/**
+ Scope function `with` to help customize any Object.
+ Example of use:
+ //```swift
+ let headerLabel: NextLabel = NextLabel()
+ 
+ with(headerLabel) {
+     $0.text = "some text"
+     $0.typeScale = .body1
+     $0.textAlignment = .center
+ }
+ //```
+ */
+public func with<T>(_ object: T, closure: (T)->()) {
     closure(object)
 }
 
@@ -393,11 +430,24 @@ with(progressBar) {
 // https://useyourloaf.com/blog/swift-non-nil-values-in-an-array-of-optionals/
 // https://stackoverflow.com/questions/24035832/function-taking-a-variable-number-of-arguments
 // https://learnappmaking.com/swift-guard-let-statement-how-to/
-private func guardObjects<T>(_ objects: Optional<T>..., clousure: ([T])->()) {
+/**
+Unwrap multiples objects with the same type with `guard`, only call the clousure if the all the objects **is not null**.
+Example of use:
+//```swift
+let obj1: String? = "Tom"
+var obj2: String? = "Jerry"
+
+guardObjects(obj1, obj2) {
+    print($0)//obj1 unwrapped
+    print($1)//obj2 unwrapped
+}
+//```
+*/
+static func guardObjects<T>(_ objects: Optional<T>..., clousure: ([T])->()) {
     for case .none in objects {
         return
     }
-    
+
     clousure(objects.compactMap({$0}))
 }
 
@@ -419,6 +469,33 @@ guardObjects(obj, obj) {
 
 ### string operations
 ```swift
+public extension String {
+    /**
+     Insert spaces between each Character of the String
+     Example of use:
+     //```swift
+     var name: String = "Tom"
+     print(name.insertSpaceBetween()) //prints: T  o  m
+    // ```
+    */
+    func insertSpaceBetween(spaces: Int = 2) -> String {
+        var spacesString = ""
+        for _ in 0...spaces {
+            spacesString += " "
+        }
+        
+        var finalText = ""
+        if self.count > 1 {
+            for j in 0..<self.count-1 {
+                finalText += self[j] + spacesString
+            }
+            finalText += String(self.last ?? Character(""))
+        }
+        
+        return finalText
+    }
+}
+
 private func insertSpaceBetween(_ text: String, spaces: Int = 2) -> String {
     var spacesString = ""
     for _ in 0...spaces {
