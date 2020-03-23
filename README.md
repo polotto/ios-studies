@@ -4,6 +4,7 @@
 
 ### documentation Swift
 - https://www.appcoda.com/swift-markdown/
+- https://nshipster.com/swift-documentation/
 
 ### show hidden files
 ```shell script
@@ -356,9 +357,31 @@ textField.rx.text
             .disposed(by: disposeBagUI)
 ```
 
-### soping functions
+### sccoping functions
 ```swift
 //let
+public extension Optional {
+    /**
+     Unwrap object with `guard`, only call the clousure if the object **is not null**.
+     Example of use:
+     //```swift
+     var obj: String? = "Tom"
+     str.let {
+         print($0) //prints: Tom
+     }
+     
+     str = nil
+     str.let {
+         print($0) //not executed if str == nil
+     }
+     //```
+     */
+    func `let`(clousure: (Wrapped)->()) {
+        guard let self = self else { return }
+        clousure(self)
+    }
+}
+
 extension Optional {
     func `let`(do: (Wrapped)->()) {
         guard let v = self else { return }
@@ -379,7 +402,21 @@ str.let {
 
 // with
 //https://www.reddit.com/r/swift/comments/3se0sm/neat_way_to_set_multiple_properties_at_once/
-func with<T>(_ object: T, closure: (T)->()) {
+
+/**
+ Scope function `with` to help customize any Object.
+ Example of use:
+ //```swift
+ let headerLabel: NextLabel = NextLabel()
+ 
+ with(headerLabel) {
+     $0.text = "some text"
+     $0.typeScale = .body1
+     $0.textAlignment = .center
+ }
+ //```
+ */
+public func with<T>(_ object: T, closure: (T)->()) {
     closure(object)
 }
 
@@ -388,4 +425,115 @@ with(progressBar) {
     $0.usesThreadedAnimation = true
     $0.startAnimation(nil)
 }
+
+// guard optional
+// https://useyourloaf.com/blog/swift-non-nil-values-in-an-array-of-optionals/
+// https://stackoverflow.com/questions/24035832/function-taking-a-variable-number-of-arguments
+// https://learnappmaking.com/swift-guard-let-statement-how-to/
+/**
+Unwrap multiples objects with the same type with `guard`, only call the clousure if the all the objects **is not null**.
+Example of use:
+//```swift
+let obj1: String? = "Tom"
+var obj2: String? = "Jerry"
+
+guardObjects(obj1, obj2) {
+    print($0)//obj1 unwrapped
+    print($1)//obj2 unwrapped
+}
+//```
+*/
+static func guardObjects<T>(_ objects: Optional<T>..., clousure: ([T])->()) {
+    for case .none in objects {
+        return
+    }
+
+    clousure(objects.compactMap({$0}))
+}
+
+private func guardObject<T>(_ object: Optional<T>, clousure: (T)->()) {
+    guard let object = object else { return }
+    clousure(object)
+}
+
+let obj: String? = ""
+guardObject(obj) {
+    print($0)//object unwrapped
+}
+
+guardObjects(obj, obj) {
+    print($0)//1 object unwrapped
+    print($1)//2 object unwrapped
+}
+```
+
+### string operations
+```swift
+public extension String {
+    /**
+     Insert spaces between each Character of the String
+     Example of use:
+     //```swift
+     var name: String = "Tom"
+     print(name.insertSpaceBetween()) //prints: T  o  m
+    // ```
+    */
+    func insertSpaceBetween(spaces: Int = 2) -> String {
+        var spacesString = ""
+        for _ in 0...spaces {
+            spacesString += " "
+        }
+        
+        var finalText = ""
+        if self.count > 1 {
+            for j in 0..<self.count-1 {
+                finalText += self[j] + spacesString
+            }
+            finalText += String(self.last ?? Character(""))
+        }
+        
+        return finalText
+    }
+}
+
+private func insertSpaceBetween(_ text: String, spaces: Int = 2) -> String {
+    var spacesString = ""
+    for _ in 0...spaces {
+        spacesString += " "
+    }
+    
+    var finalText = ""
+    if text.count > 1 {
+        for j in 0..<text.count-1 {
+            finalText += text[j] + spacesString
+        }
+        finalText += String(text.last ?? Character(""))
+    }
+    
+    return finalText
+}
+```
+
+## accessibility
+- https://www.raywenderlich.com/6827616-ios-accessibility-getting-started
+- https://medium.com/@ericamillado/how-to-make-a-uilabel-accessible-swift-3-336b0839760d
+
+```swift
+// enable or disable if is a UI element only
+label.isAccessibilityElement = true
+
+// traits config
+label.accessibilityTraits = .header
+
+// label
+label.accessibilityLabel = "my password"
+
+// value
+label.accessibilityValue = "123456"
+
+// hint
+label.accessibilityHint = "here will show your password"
+
+// notify a event to accessibility central
+UIAccessibility.post(notification: .screenChanged, argument: "password loaded from internet")
 ```
