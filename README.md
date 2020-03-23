@@ -513,3 +513,27 @@ private func insertSpaceBetween(_ text: String, spaces: Int = 2) -> String {
     return finalText
 }
 ```
+
+## accessibility
+- https://www.raywenderlich.com/6827616-ios-accessibility-getting-started
+- https://medium.com/@ericamillado/how-to-make-a-uilabel-accessible-swift-3-336b0839760d
+
+```swift
+// enable or disable if is a UI element only
+label.isAccessibilityElement = true
+
+// traits config
+label.accessibilityTraits = .header
+
+// label
+label.accessibilityLabel = "my password"
+
+// value
+label.accessibilityValue = "123456"
+
+// hint
+label.accessibilityHint = "here will show your password"
+
+// notify a event to accessibility central
+UIAccessibility.post(notification: .screenChanged, argument: "password loaded from internet")
+```
