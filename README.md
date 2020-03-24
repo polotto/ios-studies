@@ -517,6 +517,7 @@ private func insertSpaceBetween(_ text: String, spaces: Int = 2) -> String {
 ## accessibility
 - https://www.raywenderlich.com/6827616-ios-accessibility-getting-started
 - https://medium.com/@ericamillado/how-to-make-a-uilabel-accessible-swift-3-336b0839760d
+- https://medium.com/flawless-app-stories/swiftui-accessibility-traits-5fee4b56c272
 
 ```swift
 // enable or disable if is a UI element only
