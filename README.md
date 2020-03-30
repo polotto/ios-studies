@@ -518,6 +518,7 @@ private func insertSpaceBetween(_ text: String, spaces: Int = 2) -> String {
 - https://www.raywenderlich.com/6827616-ios-accessibility-getting-started
 - https://medium.com/@ericamillado/how-to-make-a-uilabel-accessible-swift-3-336b0839760d
 - https://medium.com/flawless-app-stories/swiftui-accessibility-traits-5fee4b56c272
+- https://stackoverflow.com/questions/55522345/why-is-uiaccessibility-postnotification-announcement-argument-arg-not-an
 
 ```swift
 // enable or disable if is a UI element only
@@ -537,4 +538,10 @@ label.accessibilityHint = "here will show your password"
 
 // notify a event to accessibility central
 UIAccessibility.post(notification: .screenChanged, argument: "password loaded from internet")
+
+// two consecutives UIAccessibility.post
+UIAccessibility.post(notification: .announcement, argument: "first announcement")
+DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+    UIAccessibility.post(notification: .announcement, argument: "second announcement")
+}
 ```
