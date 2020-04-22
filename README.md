@@ -549,3 +549,4 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
 ## Carroussel
 - https://stackoverflow.com/a/49844718/6846888
 - https://stackoverflow.com/a/45385718/6846888
+- pageControl: https://stackoverflow.com/a/51899396/6846888
