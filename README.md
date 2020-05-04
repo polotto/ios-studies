@@ -550,3 +550,12 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
 - https://stackoverflow.com/a/49844718/6846888
 - https://stackoverflow.com/a/45385718/6846888
 - pageControl: https://stackoverflow.com/a/51899396/6846888
+
+## Remove ViewController
+- https://stackoverflow.com/a/55577416/6846888
+```swift
+guard let navigationController = self.navigationController else { return }
+navigationController.viewControllers.removeAll(where: { (vc) -> Bool in
+    return vc.isKind(of: MyViewController.self)
+})
+```
