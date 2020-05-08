@@ -558,4 +558,13 @@ guard let navigationController = self.navigationController else { return }
 navigationController.viewControllers.removeAll(where: { (vc) -> Bool in
     return vc.isKind(of: MyViewController.self)
 })
+
+// or
+
+private func removeCardListFromStack() {
+    if let viewController
+        = navigationController?.viewControllers.first(where: { $0.isKind(of: MyViewController.self) }) {
+        viewController.removeFromParent()
+    }
+}
 ```
