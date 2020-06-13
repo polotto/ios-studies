@@ -568,3 +568,7 @@ private func removeCardListFromStack() {
     }
 }
 ```
+
+## automate ios simulator
+- https://www.raywenderlich.com/2553-automator-for-mac-os-x-tutorial-and-examples
+- https://www.howtogeek.com/209225/automator-101-how-to-automate-repetitive-tasks-on-your-mac/amp/
