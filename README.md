@@ -575,3 +575,85 @@ private func removeCardListFromStack() {
 
 ## XCode crash problem
 - https://stackoverflow.com/questions/44819301/xcode-dont-open-myproject/44819920
+
+## JSON conversions
+```swift
+private func stringToJson(_ string: String) -> [JSON] {
+    if let data = string.data(using: .utf8) {
+        do {
+            if let jsonArray = try JSONSerialization.jsonObject(with: data , options : .allowFragments) as? [Dictionary<String,Any>]
+            {
+                return jsonArray
+            } else {
+                print("bad json")
+                return []
+            }
+        } catch let error as NSError {
+            print(error)
+            return []
+        }
+    }
+    return []
+}
+
+func jsonToString(_ json: JSON) -> String {
+    do {
+        let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
+        let convertedString = String(data: data1, encoding: String.Encoding.utf8) ?? ""
+        return convertedString
+    } catch let myJSONError {
+        print(myJSONError)
+        return ""
+    }
+}
+```
+
+## remove especial chars and accents
+```swift
+func toNoSmartQuotes() -> String {
+    let userInput: String = self
+    
+    return userInput.folding(options: .diacriticInsensitive, locale: .current)
+}
+public func removeSpecialCharacters() -> String {
+    let charsToRemove: Set<Character> = Set("!#$%&'()*+,-.:;<=>?@[\\]^_`{|}~")
+    
+    let newString = String(self.filter({!charsToRemove.contains($0)}))
+    
+    return newString
+}
+```
+
+## Safe area
+```swift
+//https://stackoverflow.com/questions/46317061/how-do-i-use-safe-area-layout-programmatically
+extension UIView {
+  var safeTopAnchor: NSLayoutYAxisAnchor {
+    if #available(iOS 11.0, *) {
+      return self.safeAreaLayoutGuide.topAnchor
+    }
+    return self.topAnchor
+  }
+
+  var safeLeftAnchor: NSLayoutXAxisAnchor {
+    if #available(iOS 11.0, *){
+      return self.safeAreaLayoutGuide.leftAnchor
+    }
+    return self.leftAnchor
+  }
+
+  var safeRightAnchor: NSLayoutXAxisAnchor {
+    if #available(iOS 11.0, *){
+      return self.safeAreaLayoutGuide.rightAnchor
+    }
+    return self.rightAnchor
+  }
+
+  var safeBottomAnchor: NSLayoutYAxisAnchor {
+    if #available(iOS 11.0, *) {
+      return self.safeAreaLayoutGuide.bottomAnchor
+    }
+    return self.bottomAnchor
+  }
+}
+```
