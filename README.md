@@ -518,6 +518,7 @@ private func insertSpaceBetween(_ text: String, spaces: Int = 2) -> String {
 - https://www.raywenderlich.com/6827616-ios-accessibility-getting-started
 - https://medium.com/@ericamillado/how-to-make-a-uilabel-accessible-swift-3-336b0839760d
 - https://medium.com/flawless-app-stories/swiftui-accessibility-traits-5fee4b56c272
+- https://stackoverflow.com/questions/55522345/why-is-uiaccessibility-postnotification-announcement-argument-arg-not-an
 
 ```swift
 // enable or disable if is a UI element only
@@ -537,6 +538,131 @@ label.accessibilityHint = "here will show your password"
 
 // notify a event to accessibility central
 UIAccessibility.post(notification: .screenChanged, argument: "password loaded from internet")
+
+// two consecutives UIAccessibility.post
+UIAccessibility.post(notification: .announcement, argument: "first announcement")
+DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+    UIAccessibility.post(notification: .announcement, argument: "second announcement")
+}
+```
+
+## Carroussel
+- https://stackoverflow.com/a/49844718/6846888
+- https://stackoverflow.com/a/45385718/6846888
+- pageControl: https://stackoverflow.com/a/51899396/6846888
+
+## Remove ViewController
+- https://stackoverflow.com/a/55577416/6846888
+```swift
+guard let navigationController = self.navigationController else { return }
+navigationController.viewControllers.removeAll(where: { (vc) -> Bool in
+    return vc.isKind(of: MyViewController.self)
+})
+
+// or
+
+private func removeCardListFromStack() {
+    if let viewController
+        = navigationController?.viewControllers.first(where: { $0.isKind(of: MyViewController.self) }) {
+        viewController.removeFromParent()
+    }
+}
+```
+
+## automate ios simulator
+- https://www.raywenderlich.com/2553-automator-for-mac-os-x-tutorial-and-examples
+- https://www.howtogeek.com/209225/automator-101-how-to-automate-repetitive-tasks-on-your-mac/amp/
+
+## XCode crash problem
+- https://stackoverflow.com/questions/44819301/xcode-dont-open-myproject/44819920
+
+## JSON conversions
+```swift
+private func stringToJson(_ string: String) -> [JSON] {
+    if let data = string.data(using: .utf8) {
+        do {
+            if let jsonArray = try JSONSerialization.jsonObject(with: data , options : .allowFragments) as? [Dictionary<String,Any>]
+            {
+                return jsonArray
+            } else {
+                print("bad json")
+                return []
+            }
+        } catch let error as NSError {
+            print(error)
+            return []
+        }
+    }
+    return []
+}
+
+func jsonToString(_ json: JSON) -> String {
+    do {
+        let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
+        let convertedString = String(data: data1, encoding: String.Encoding.utf8) ?? ""
+        return convertedString
+    } catch let myJSONError {
+        print(myJSONError)
+        return ""
+    }
+}
+```
+
+## remove especial chars and accents
+```swift
+func toNoSmartQuotes() -> String {
+    let userInput: String = self
+    
+    return userInput.folding(options: .diacriticInsensitive, locale: .current)
+}
+public func removeSpecialCharacters() -> String {
+    let charsToRemove: Set<Character> = Set("!#$%&'()*+,-.:;<=>?@[\\]^_`{|}~")
+    
+    let newString = String(self.filter({!charsToRemove.contains($0)}))
+    
+    return newString
+}
+```
+
+## Safe area
+```swift
+//https://stackoverflow.com/questions/46317061/how-do-i-use-safe-area-layout-programmatically
+extension UIView {
+  var safeTopAnchor: NSLayoutYAxisAnchor {
+    if #available(iOS 11.0, *) {
+      return self.safeAreaLayoutGuide.topAnchor
+    }
+    return self.topAnchor
+  }
+
+  var safeLeftAnchor: NSLayoutXAxisAnchor {
+    if #available(iOS 11.0, *){
+      return self.safeAreaLayoutGuide.leftAnchor
+    }
+    return self.leftAnchor
+  }
+
+  var safeRightAnchor: NSLayoutXAxisAnchor {
+    if #available(iOS 11.0, *){
+      return self.safeAreaLayoutGuide.rightAnchor
+    }
+    return self.rightAnchor
+  }
+
+  var safeBottomAnchor: NSLayoutYAxisAnchor {
+    if #available(iOS 11.0, *) {
+      return self.safeAreaLayoutGuide.bottomAnchor
+    }
+    return self.bottomAnchor
+  }
+}
+
+private var safeBottomAnchor: NSLayoutYAxisAnchor {
+    if #available(iOS 11.0, *) {
+    return self.view.safeAreaLayoutGuide.bottomAnchor
+    }
+    return self.view.bottomAnchor
+}
 ```
 
 ## date conversion
