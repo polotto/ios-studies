@@ -664,3 +664,135 @@ private var safeBottomAnchor: NSLayoutYAxisAnchor {
     return self.view.bottomAnchor
 }
 ```
+
+## date conversion
+```swift
+// https://www.programiz.com/swift-programming/for-in-loop
+// https://stackoverflow.com/questions/30965301/swift-doesnotcontain-method-for-array
+// https://www.dotnetperls.com/int-swift
+// https://docs.swift.org/swift-book/LanguageGuide/Extensions.html
+// https://stackoverflow.com/questions/36861732/convert-string-to-date-in-swift
+// https://cocoacasts.com/swift-fundamentals-how-to-convert-a-string-to-a-date-in-swift
+// https://stackoverflow.com/questions/38641982/converting-date-between-timezones-swift
+// https://cocoacasts.com/swift-fundamentals-how-to-convert-a-string-to-a-date-in-swift
+// https://stackoverflow.com/questions/25533147/get-day-of-week-using-nsdate
+// https://stackoverflow.com/questions/35700281/date-format-in-swift
+// https://sarunw.com/posts/getting-number-of-days-between-two-dates/
+// https://docs.swift.org/swift-book/LanguageGuide/Extensions.html
+// https://stackoverflow.com/questions/13324633/nsdate-beginning-of-day-and-end-of-day
+// https://valv0.medium.com/computed-properties-and-extensions-a-pure-swift-approach-64733768112c
+//
+// https://www.dummies.com/article/technology/programming-web-design/app-development/how-to-create-a-playground-in-swift-144659/
+//
+// http://www.unicode.org/reports/tr35/tr35-dates.html#Date_Format_Patterns
+// https://developer.apple.com/documentation/foundation/dates_and_times
+
+import Foundation
+
+extension String {
+    func toDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+
+        // 1 format
+        dateFormatter.dateFormat = "dd' 'MMM' 'yyyy' 'HH:mm:ss' 'zz"
+        var date = dateFormatter.date(from: self)
+        
+        
+        if date != nil {
+            return date
+        }
+        
+        // 2 format
+        dateFormatter.dateFormat = "EEEE' 'dd'/'MMMM'/'yyyy"
+        date = dateFormatter.date(from: self)
+        if date != nil {
+            return date
+        }
+
+        // 3 format
+        dateFormatter.dateFormat = "dd'('EEE')'.MM'('MMM')'.yyyy"
+        date = dateFormatter.date(from: self)
+        if date != nil {
+            return date
+        }
+
+        return nil
+    }
+
+}
+
+extension Date {
+    var day: Int? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+        return Int(dateFormatter.string(from: self))
+    }
+
+    var nameOfDay: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: self)
+    }
+
+    var month: Int? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM"
+        return Int(dateFormatter.string(from: self))
+    }
+
+    var nameOfTheMonth: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM"
+        return dateFormatter.string(from: self)
+    }
+
+    var year: Int? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        return Int(dateFormatter.string(from: self))
+    }
+
+    static func numberOfDaysBetween(_ date: Date, and date2: Date) -> Int? {
+        // calculate how many days has between the dates
+        let fromDate = Calendar.current.startOfDay(for: date)
+        let toDate = Calendar.current.startOfDay(for: date2)
+        let numberOfDays = Calendar.current.dateComponents([.day], from: fromDate, to: toDate)
+
+        if numberOfDays.day != nil {
+            return abs(numberOfDays.day ?? 0)
+        }
+        
+        return nil
+    }
+}
+
+"12 Dec 2018 22:15:00 CST".toDate()
+"03 Feb 2020 12:10:45 CET".toDate()
+"22 Aug 2005 10:17:20 GMT".toDate()
+
+"Sunday 26/April/2020".toDate()
+"Monday 06/April/2020".toDate()
+"Friday 04/September/2020".toDate()
+
+"7(Mon).12(Dec).2020".toDate()
+"20(Wed).12(Dec).2006".toDate()
+"6(Mon).1(Jan).2020".toDate()
+
+
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy/MM/dd HH:mm"
+let date1 = formatter.date(from: "2020/01/25 22:31")
+let date2 = formatter.date(from: "2020/01/30 22:31")
+
+Date.numberOfDaysBetween(date1!, and: date2!)
+
+Date.numberOfDaysBetween(date2!, and: date1!)
+
+date1?.day
+date1?.nameOfDay
+date1?.month
+date1?.nameOfTheMonth
+date1?.year
+
+```
