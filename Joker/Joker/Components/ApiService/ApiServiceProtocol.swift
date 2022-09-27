@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ApiServiceProtocol {
-    func loadNewJoke() -> String
+    func loadRandomJoke(_ resultData: @escaping (Result<Joke>) -> Void)
 }

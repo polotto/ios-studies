@@ -8,7 +8,10 @@
 import Foundation
 
 enum HomeStrings: String {
+    case noJokes = "noJokes"
+    case category = "category"
     case getJokeButton = "getJokeButton"
+    case moreJokesButton = "moreJokesButton"
     
     func localized() -> String {
         rawValue.localized("HomeStrings")

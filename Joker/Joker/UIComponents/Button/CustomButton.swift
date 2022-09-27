@@ -9,8 +9,10 @@ import Foundation
 import UIKit
 
 class CustomButton: UIButton {
+    //MARK: - clousures
     var click: (() -> Void)?
     
+    //MARK: - initializers
     init() {
         super.init(frame: .zero)
         initialize()
@@ -21,19 +23,21 @@ class CustomButton: UIButton {
         initialize()
     }
     
-    func initialize() {
-        self.configuration = .filled()
-        self.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+    //MARK: - private methods
+    private func initialize() {
+        configuration = .filled()
+        addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
     
-    func setTitle(_ title: String) {
-        self.setTitle(title, for: .normal)
-    }
-    
-    @objc func buttonAction(sender: UIButton) {
+    @objc private func buttonAction(sender: UIButton) {
         if let click = self.click {
             click()
             print("#CustomButton: " + (self.titleLabel?.text ?? ""))
         }
+    }
+    
+    //MARK: - public methods
+    func setTitle(_ title: String) {
+        setTitle(title, for: .normal)
     }
 }

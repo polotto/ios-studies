@@ -6,3 +6,6 @@
   
 */
 "getJokeButton" = "New Joke Now!";
+"noJokes" = "No Jokes Here...";
+"category" = "Category: ";
+"moreJokesButton" = "Load More Jokes in The Category";
