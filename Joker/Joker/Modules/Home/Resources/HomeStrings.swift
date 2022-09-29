@@ -8,6 +8,7 @@
 import Foundation
 
 enum HomeStrings: String {
+    case title = "title"
     case noJokes = "noJokes"
     case category = "category"
     case getJokeButton = "getJokeButton"

@@ -30,6 +30,7 @@ class CustomLabel: UILabel {
         numberOfLines = 0
 //        font = UIFont(name: "HelveticaNeue-Bold", size: 20)
         font = font.withSize(25)
+        textColor = .AppLightTheme.textOnBackground
     }
     
     //MARK: - public methods

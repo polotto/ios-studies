@@ -10,13 +10,15 @@ import Foundation
 class HomeViewModel: BaseViewModel {
     //MARK: - properties
     private let apiService: ApiServiceProtocol
+    private let navigationService: NavigationServiceProtocol
     
     //MARK: - local variables
     private var lastJoke: Joke?
     
     //MARK: - initializers
-    init(apiService: ApiService) {
+    init(apiService: ApiServiceProtocol, navigationService: NavigationServiceProtocol) {
         self.apiService = apiService
+        self.navigationService = navigationService
     }
     
     //MARK: - bindings
@@ -38,6 +40,8 @@ class HomeViewModel: BaseViewModel {
     }
     
     func moreJokes() {
-        
+        if (lastJoke != nil) {
+            navigationService.push(MoreJokesViewModel.self, parameters: lastJoke)
+        }
     }
 }

@@ -14,4 +14,15 @@ struct Joke: Codable {
     let id: Int
     let safe: Bool
     let lang: String
+    
+    init() {
+        error = false
+        category = String()
+        type = String()
+        joke = String()
+        flags = Flags()
+        id = 0
+        safe = false
+        lang = String()
+    }
 }

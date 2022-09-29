@@ -33,7 +33,8 @@ class HomeViewController: BaseViewController {
     }
     
     //MARK: - setup view
-    func setupUIElements() {
+    private func setupUIElements() {
+        title = HomeStrings.title.localized()
         jokeLabel.setTitle(HomeStrings.noJokes.localized())
         categoryLabel.setTitle(String())
         getJokeButton.setTitle(HomeStrings.getJokeButton.localized())
@@ -41,10 +42,10 @@ class HomeViewController: BaseViewController {
     }
     
     //MARK: - setup constraints
-    func setupConstraints() {
+    private func setupConstraints() {
         let margins = self.view.layoutMarginsGuide;
-        let defaultMargins = CGFloat(10)
-        let defaultHeight = CGFloat(30)
+        let defaultMargins = Values.defaultMargin.rawValue
+        let defaultHeight = Values.defaultHeight.rawValue
         
         jokeLabel.addConstraint(vertical: margins.centerYAnchor, left: margins.leftAnchor, right: margins.rightAnchor, paddingLeft: defaultMargins, paddingRight: defaultMargins, width: 0, height: 0)
         
@@ -57,12 +58,13 @@ class HomeViewController: BaseViewController {
     }
     
     //MARK: - setup bindings
-    func setupBindings() {
+    private func setupBindings() {
         // vm dependencies
         let apiService = ApiService(networkService: NetworkService())
+        let navigationService = NavigationService()
         
         // vm instance
-        let vm = HomeViewModel(apiService: apiService)
+        let vm = HomeViewModel(apiService: apiService, navigationService: navigationService)
         
         // commands
         getJokeButton.click = vm.receiveNewJoke

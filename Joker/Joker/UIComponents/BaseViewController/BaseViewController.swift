@@ -9,11 +9,20 @@ import Foundation
 import UIKit
 
 class BaseViewController: UIViewController {
+    //MARK: - properties
+    var parameters: Any? = nil
+    
     //MARK: - override
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .lightGray
+        self.view.backgroundColor = .AppLightTheme.background
+        
+        self.navigationController?.navigationBar.backgroundColor = .AppLightTheme.primary
+        self.navigationController?.navigationBar.tintColor = .AppLightTheme.textOnPrimary
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.AppLightTheme.textOnPrimary]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     //MARK: - public method

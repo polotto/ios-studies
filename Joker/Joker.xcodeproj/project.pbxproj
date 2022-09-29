@@ -32,6 +32,14 @@
 		713BE31A28DB4403008B3B8C /* JokerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713BE31928DB4403008B3B8C /* JokerUITestsLaunchTests.swift */; };
 		715DC3F928E39C5C00ABC893 /* MoreJokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC3F828E39C5C00ABC893 /* MoreJokesViewController.swift */; };
 		715DC3FB28E39C6A00ABC893 /* MoreJokesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC3FA28E39C6A00ABC893 /* MoreJokesViewModel.swift */; };
+		715DC3FE28E4792000ABC893 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC3FD28E4791F00ABC893 /* Values.swift */; };
+		715DC40028E47A2500ABC893 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC3FF28E47A2500ABC893 /* NavigationService.swift */; };
+		715DC40228E47A3200ABC893 /* NavigationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC40128E47A3200ABC893 /* NavigationServiceProtocol.swift */; };
+		715DC40428E4C8E300ABC893 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC40328E4C8E300ABC893 /* Colors.swift */; };
+		715DC40728E4FED800ABC893 /* MoreJokesStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 715DC40628E4FED800ABC893 /* MoreJokesStrings.strings */; };
+		715DC40928E4FEED00ABC893 /* MoreJokesStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC40828E4FEED00ABC893 /* MoreJokesStrings.swift */; };
+		715DC40C28E5070F00ABC893 /* MoreJoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC40B28E5070F00ABC893 /* MoreJoreTableViewCell.swift */; };
+		715DC40F28E5251D00ABC893 /* Jokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC40E28E5251D00ABC893 /* Jokes.swift */; };
 		71A4258428E383BA00237256 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4258328E383BA00237256 /* CustomLabel.swift */; };
 		71A4258728E3905B00237256 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4258628E3905B00237256 /* BaseViewModel.swift */; };
 		71A4258A28E3939C00237256 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4258928E3939C00237256 /* BaseViewController.swift */; };
@@ -84,6 +92,14 @@
 		713BE31928DB4403008B3B8C /* JokerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		715DC3F828E39C5C00ABC893 /* MoreJokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreJokesViewController.swift; sourceTree = "<group>"; };
 		715DC3FA28E39C6A00ABC893 /* MoreJokesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreJokesViewModel.swift; sourceTree = "<group>"; };
+		715DC3FD28E4791F00ABC893 /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
+		715DC3FF28E47A2500ABC893 /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
+		715DC40128E47A3200ABC893 /* NavigationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationServiceProtocol.swift; sourceTree = "<group>"; };
+		715DC40328E4C8E300ABC893 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		715DC40628E4FED800ABC893 /* MoreJokesStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MoreJokesStrings.strings; sourceTree = "<group>"; };
+		715DC40828E4FEED00ABC893 /* MoreJokesStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreJokesStrings.swift; sourceTree = "<group>"; };
+		715DC40B28E5070F00ABC893 /* MoreJoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreJoreTableViewCell.swift; sourceTree = "<group>"; };
+		715DC40E28E5251D00ABC893 /* Jokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jokes.swift; sourceTree = "<group>"; };
 		71A4258328E383BA00237256 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		71A4258628E3905B00237256 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		71A4258928E3939C00237256 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +176,7 @@
 		7123D6DE28E249CB00BBA36B /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				715DC3FC28E478A600ABC893 /* Styles */,
 				71A4258828E3937D00237256 /* BaseViewController */,
 				71A4258228E383A500237256 /* Label */,
 				7123D6C928E238C000BBA36B /* Button */,
@@ -172,6 +189,7 @@
 			children = (
 				7123D6E128E282F400BBA36B /* Flags.swift */,
 				7123D6E328E2830E00BBA36B /* Joke.swift */,
+				715DC40E28E5251D00ABC893 /* Jokes.swift */,
 			);
 			path = DataClasses;
 			sourceTree = "<group>";
@@ -288,6 +306,32 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		715DC3FC28E478A600ABC893 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				715DC3FD28E4791F00ABC893 /* Values.swift */,
+				715DC40328E4C8E300ABC893 /* Colors.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		715DC40528E4FEBA00ABC893 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				715DC40628E4FED800ABC893 /* MoreJokesStrings.strings */,
+				715DC40828E4FEED00ABC893 /* MoreJokesStrings.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		715DC40A28E5068500ABC893 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				715DC40B28E5070F00ABC893 /* MoreJoreTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		71A4258228E383A500237256 /* Label */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +359,8 @@
 		71A4258B28E39A4F00237256 /* NavigationService */ = {
 			isa = PBXGroup;
 			children = (
+				715DC3FF28E47A2500ABC893 /* NavigationService.swift */,
+				715DC40128E47A3200ABC893 /* NavigationServiceProtocol.swift */,
 			);
 			path = NavigationService;
 			sourceTree = "<group>";
@@ -322,6 +368,8 @@
 		71A4258C28E39BD400237256 /* MoreJokes */ = {
 			isa = PBXGroup;
 			children = (
+				715DC40A28E5068500ABC893 /* TableViewCell */,
+				715DC40528E4FEBA00ABC893 /* Resources */,
 				715DC3F828E39C5C00ABC893 /* MoreJokesViewController.swift */,
 				715DC3FA28E39C6A00ABC893 /* MoreJokesViewModel.swift */,
 			);
@@ -433,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				713BE30328DB4403008B3B8C /* LaunchScreen.storyboard in Resources */,
+				715DC40728E4FED800ABC893 /* MoreJokesStrings.strings in Resources */,
 				7123D6CF28E2402B00BBA36B /* HomeStrings.strings in Resources */,
 				713BE30028DB4403008B3B8C /* Assets.xcassets in Resources */,
 			);
@@ -465,9 +514,13 @@
 				713BE2FB28DB4400008B3B8C /* HomeViewController.swift in Sources */,
 				7123D6D128E2408E00BBA36B /* HomeStrings.swift in Sources */,
 				7123D6E428E2830E00BBA36B /* Joke.swift in Sources */,
+				715DC40228E47A3200ABC893 /* NavigationServiceProtocol.swift in Sources */,
 				71A4258A28E3939C00237256 /* BaseViewController.swift in Sources */,
+				715DC40C28E5070F00ABC893 /* MoreJoreTableViewCell.swift in Sources */,
 				7123D6EE28E32C4E00BBA36B /* NetworkServiceProtocol.swift in Sources */,
+				715DC40928E4FEED00ABC893 /* MoreJokesStrings.swift in Sources */,
 				7123D6DD28E2495000BBA36B /* ApiServiceProtocol.swift in Sources */,
+				715DC40F28E5251D00ABC893 /* Jokes.swift in Sources */,
 				713BE2F728DB4400008B3B8C /* AppDelegate.swift in Sources */,
 				7123D6EC28E32AD600BBA36B /* Result.swift in Sources */,
 				7123D6F028E37A8800BBA36B /* HttpMethod.swift in Sources */,
@@ -478,8 +531,11 @@
 				71A4258728E3905B00237256 /* BaseViewModel.swift in Sources */,
 				713BE2F928DB4400008B3B8C /* SceneDelegate.swift in Sources */,
 				715DC3F928E39C5C00ABC893 /* MoreJokesViewController.swift in Sources */,
+				715DC40028E47A2500ABC893 /* NavigationService.swift in Sources */,
+				715DC40428E4C8E300ABC893 /* Colors.swift in Sources */,
 				7123D6CB28E238E800BBA36B /* CustomButton.swift in Sources */,
 				7123D6E628E3250400BBA36B /* NetworkService.swift in Sources */,
+				715DC3FE28E4792000ABC893 /* Values.swift in Sources */,
 				7123D6D428E241B200BBA36B /* String+Localizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

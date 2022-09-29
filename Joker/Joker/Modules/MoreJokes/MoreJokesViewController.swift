@@ -8,9 +8,10 @@
 import Foundation
 import UIKit
 
-class MoreJokesViewController: BaseViewController {
+class MoreJokesViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     //MARK: - parameters
-    private let jokeLabel = CustomLabel()
+    private var vm: MoreJokesViewModel?
+    private let jokesTableView = UITableView(frame: .zero, style: .plain)
     
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -23,37 +24,58 @@ class MoreJokesViewController: BaseViewController {
     }
     
     //MARK: - add ui elements
-    func addUIElements() {
-        addSubview(jokeLabel)
+    private func addUIElements() {
+        addSubview(jokesTableView)
     }
     
     //MARK: - setup view
-    func setupUIElements() {
-        jokeLabel.setTitle(HomeStrings.noJokes.localized())
+    private func setupUIElements() {
+        jokesTableView.delegate = self
+        jokesTableView.dataSource = self
+        jokesTableView.register(MoreJoreTableViewCell.self, forCellReuseIdentifier: MoreJoreTableViewCell.identifier)
     }
     
     //MARK: - setup constraints
-    func setupConstraints() {
+    private func setupConstraints() {
         let margins = self.view.layoutMarginsGuide;
-        let defaultMargins = CGFloat(10)
-        let defaultHeight = CGFloat(30)
         
-        jokeLabel.addConstraint(vertical: margins.centerYAnchor, left: margins.leftAnchor, right: margins.rightAnchor, paddingLeft: defaultMargins, paddingRight: defaultMargins, width: 0, height: 0)
+        jokesTableView.addConstraint(top: margins.topAnchor, left: margins.leftAnchor, bottom: margins.bottomAnchor, right: margins.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
     }
     
     //MARK: - setup bindings
-    func setupBindings() {
+    private func setupBindings() {
         // vm dependencies
         let apiService = ApiService(networkService: NetworkService())
+        let lastJoke = parameters as? Joke ?? Joke()
         
         // vm instance
-        let vm = MoreJokesViewModel(apiService: apiService)
+        vm = MoreJokesViewModel(lastJoke: lastJoke, apiService: apiService)
         
         // commands
         
         // binding creation
-        vm.isBusy = super.isBusy
+        vm?.isBusy = super.isBusy
+        vm?.title = { category in
+            self.title = MoreJokesStrings.title.localized() + category
+        }
         
+        // call later init
+        vm?.laterInit()
+    }
+    
+    //MARK: - tableView implementations
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vm?.jokes?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MoreJoreTableViewCell.identifier, for: indexPath) as? MoreJoreTableViewCell else { return UITableViewCell() }
+        
+        let row = indexPath.row
+        
+        cell.setupUIElements(jokeTxt: vm?.jokes?[row].joke ?? String())
+        
+        return cell
     }
 }

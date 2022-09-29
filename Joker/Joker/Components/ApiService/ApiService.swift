@@ -25,8 +25,8 @@ class ApiService: ApiServiceProtocol {
         networkService.httpGet(with: Joke.self, url: url, headers: headers, completion: resultData)
     }
     
-//    func load10RandomJokes(_ resultData: @escaping (Result<[Joke]>) -> Void) {
-//        let url = apiBaseUrl + "/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single&amount=10"
-//        networkService.httpGet(with: Joke.self, url: url, headers: headers, completion: resultData)
-//    }
+    func load10RandomJokes(_ resultData: @escaping (Result<Jokes>) -> Void) {
+        let url = apiBaseUrl + "/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single&amount=10"
+        networkService.httpGet(with: Jokes.self, url: url, headers: headers, completion: resultData)
+    }
 }

@@ -5,6 +5,7 @@
   Created by Angelo Polotto on 26/09/22.
   
 */
+"title" = "Home";
 "getJokeButton" = "New Joke Now!";
 "noJokes" = "No Jokes Here...";
 "category" = "Category: ";

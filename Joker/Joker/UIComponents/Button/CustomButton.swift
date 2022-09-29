@@ -25,15 +25,26 @@ class CustomButton: UIButton {
     
     //MARK: - private methods
     private func initialize() {
-        configuration = .filled()
+//        configuration = .plain()
+        backgroundColor = .AppLightTheme.primary
+        setTitleColor(.AppLightTheme.textOnPrimary, for: .normal)
         addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        addTarget(self, action: #selector(buttonColorManager), for: .touchDown)
     }
     
     @objc private func buttonAction(sender: UIButton) {
+        sender.backgroundColor =  .AppLightTheme.primary
+        setTitleColor(.AppLightTheme.textOnPrimary, for: .normal)
+        
         if let click = self.click {
             click()
             print("#CustomButton: " + (self.titleLabel?.text ?? ""))
         }
+    }
+    
+    @objc private func buttonColorManager(sender: UIButton) {
+        sender.backgroundColor =  .AppLightTheme.secondary
+        setTitleColor(.AppLightTheme.textOnSecondary, for: .normal)
     }
     
     //MARK: - public methods
