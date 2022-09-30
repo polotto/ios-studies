@@ -1,0 +1,9 @@
+/* 
+  MessageStrings.strings
+  Joker
+
+  Created by Angelo Polotto on 29/09/22.
+  
+*/
+"titleError" = "Error";
+"okError" = "OK";

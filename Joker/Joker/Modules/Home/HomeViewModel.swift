@@ -11,14 +11,17 @@ class HomeViewModel: BaseViewModel {
     //MARK: - properties
     private let apiService: ApiServiceProtocol
     private let navigationService: NavigationServiceProtocol
+    private let messageService: MessageServiceProtocol
     
     //MARK: - local variables
     private var lastJoke: Joke?
     
     //MARK: - initializers
-    init(apiService: ApiServiceProtocol, navigationService: NavigationServiceProtocol) {
+    init(apiService: ApiServiceProtocol, navigationService: NavigationServiceProtocol,
+         messageService: MessageServiceProtocol) {
         self.apiService = apiService
         self.navigationService = navigationService
+        self.messageService = messageService
     }
     
     //MARK: - bindings
@@ -28,13 +31,16 @@ class HomeViewModel: BaseViewModel {
     func receiveNewJoke() {
         isBusy?(true)
         apiService.loadRandomJoke { [self] result in
-            isBusy?(false)
             switch result {
             case .success(let jokeObj):
+                isBusy?(false)
                 lastJoke = jokeObj
                 self.joke?(jokeObj.joke, jokeObj.category)
             case .failure(let error):
-                self.joke?(error.localizedDescription, String())
+                messageService.error(error.localizedDescription) {
+                    self.isBusy?(false)
+                }
+                self.joke?(String(), String())
             }
         }
     }

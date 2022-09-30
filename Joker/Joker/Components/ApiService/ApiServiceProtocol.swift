@@ -9,4 +9,5 @@ import Foundation
 
 protocol ApiServiceProtocol {
     func loadRandomJoke(_ resultData: @escaping (Result<Joke>) -> Void)
+    func load10RandomJokes() async throws -> Jokes
 }

@@ -12,33 +12,51 @@ class MoreJoreTableViewCell: UITableViewCell {
     //MARK: - properties
     static let identifier = "MoreJoreTableViewCell"
     private let joke = CustomLabel()
+    private let divider = Divider()
     
     
     //MARK: - initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        contentView.backgroundColor = .white
+        
+        setupCell()
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        setupCell()
+    }
+    
+    private func setupCell() {
+        addUIElements()
+        setupUIElements()
+        setupConstraints()
     }
     
     //MARK: - add ui elementes
     private func addUIElements() {
         addSubview(joke)
+        addSubview(divider)
     }
     
     //MARK: - setup ui elements
-    func setupUIElements(jokeTxt: String) {
-        joke.setTitle(jokeTxt)
+    private func setupUIElements() {
+        backgroundColor = .AppLightTheme.background
     }
     
     //MARK: - setupConstraints
     private func setupConstraints() {
         let defaultMargin = Values.defaultMargin.rawValue
+        let containerView = self
         
-        joke.addConstraint(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: defaultMargin, paddingLeft: defaultMargin, paddingBottom: defaultMargin, paddingRight: defaultMargin, width: defaultMargin, height: defaultMargin)
+        joke.addConstraint(top: containerView.topAnchor, left: containerView.leftAnchor, bottom: containerView.bottomAnchor, right: containerView.rightAnchor, paddingTop: defaultMargin, paddingLeft: defaultMargin, paddingBottom: defaultMargin, paddingRight: defaultMargin, width: 0, height: 0)
+        
+        divider.addConstraint(top: nil, left: containerView.leftAnchor, bottom: containerView.bottomAnchor, right: containerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: Values.dividerHeight.rawValue)
+    }
+    
+    //MARK: - setup data
+    func setupData(jokeTxt: String) {
+        joke.setTitleViewCell(jokeTxt)
     }
 }

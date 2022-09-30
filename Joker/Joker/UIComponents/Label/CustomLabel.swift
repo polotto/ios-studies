@@ -39,4 +39,9 @@ class CustomLabel: UILabel {
             self.text = text
         }
     }
+    
+    func setTitleViewCell(_ text: String) {
+        self.text = text
+        sizeToFit()
+    }
 }

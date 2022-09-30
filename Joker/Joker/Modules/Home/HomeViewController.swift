@@ -14,14 +14,19 @@ class HomeViewController: BaseViewController {
     private let getJokeButton = CustomButton()
     private let moreJokesButton = CustomButton()
     
-    //MARK: - life cycle
+    //MARK: - life cycle    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupBindings()
+    }
+    
+    override func loadView() {
+        super.loadView()
         
         addUIElements()
         setupUIElements()
         setupConstraints()
-        setupBindings()
     }
     
     //MARK: - add ui elements
@@ -62,9 +67,10 @@ class HomeViewController: BaseViewController {
         // vm dependencies
         let apiService = ApiService(networkService: NetworkService())
         let navigationService = NavigationService()
+        let messageService = MessageService()
         
         // vm instance
-        let vm = HomeViewModel(apiService: apiService, navigationService: navigationService)
+        let vm = HomeViewModel(apiService: apiService, navigationService: navigationService, messageService: messageService)
         
         // commands
         getJokeButton.click = vm.receiveNewJoke

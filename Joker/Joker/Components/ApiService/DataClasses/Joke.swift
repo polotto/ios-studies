@@ -8,7 +8,7 @@
 import Foundation
 
 struct Joke: Codable {
-    let error: Bool
+    let error: Bool?
     let category, type, joke: String
     let flags: Flags
     let id: Int

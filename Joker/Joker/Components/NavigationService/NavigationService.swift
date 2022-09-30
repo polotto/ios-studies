@@ -14,6 +14,23 @@ class NavigationService: NavigationServiceProtocol {
         String(describing: MoreJokesViewModel.self): MoreJokesViewController.self
     ]
     
+    func pushToRoot<T>(_ viewModelType: T.Type, parameters: Any? = nil) {
+        let key = String(describing: viewModelType)
+        let pageType = pageMap[key]!
+        
+        let newViewController = pageType.init()
+        newViewController.parameters = parameters
+        
+        if let viewController = UIApplication.shared.windows.first!.rootViewController as? BaseViewController {
+            viewController.parameters = parameters
+            viewController.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
+    func pushToRoot<T>(_ viewModelType: T.Type) {
+        pushToRoot(viewModelType, parameters: nil)
+    }
+    
     func push<T>(_ viewModelType: T.Type, parameters: Any? = nil) {
         let key = String(describing: viewModelType)
         let pageType = pageMap[key]!

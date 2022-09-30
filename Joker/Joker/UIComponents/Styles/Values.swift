@@ -11,4 +11,5 @@ import UIKit
 enum Values: CGFloat {
 case defaultMargin = 10
 case defaultHeight = 30
+case dividerHeight = 1
 }

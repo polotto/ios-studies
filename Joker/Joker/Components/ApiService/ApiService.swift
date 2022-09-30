@@ -25,8 +25,8 @@ class ApiService: ApiServiceProtocol {
         networkService.httpGet(with: Joke.self, url: url, headers: headers, completion: resultData)
     }
     
-    func load10RandomJokes(_ resultData: @escaping (Result<Jokes>) -> Void) {
+    func load10RandomJokes() async throws -> Jokes {
         let url = apiBaseUrl + "/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single&amount=10"
-        networkService.httpGet(with: Jokes.self, url: url, headers: headers, completion: resultData)
+        return try await networkService.httpGet(with: Jokes.self, url: url, headers: headers)
     }
 }

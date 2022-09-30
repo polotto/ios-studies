@@ -16,4 +16,11 @@ protocol NetworkServiceProtocol {
                                          url: String, headers: [String: String],
                                          body: R,
                                          completion: @escaping (Result<T>) -> Void)
+    
+    func httpGet<T: Codable>(with responseObjectType: T.Type,
+                             url: String, headers: [String: String]) async throws -> T
+    
+    func httpPost<T: Codable, R: Codable>(with responseObjectType: T.Type,
+                              url: String, headers: [String: String],
+                              body: R) async throws -> T
 }

@@ -57,12 +57,43 @@ class NetworkService: NetworkServiceProtocol {
         }
     }
     
-//    func fetchImages() async throws -> String? {
-//        // .. perform data request
-//        return nil
-//    }
+    func httpGet<T: Codable>(with responseObjectType: T.Type,
+                             url: String, headers: [String: String]) async throws -> T {
+        let data = try await createSessionRequest(with: .get, url: url, headers: headers, body: nil)
+
+        let decodedObject = try JSONDecoder().decode(responseObjectType.self, from: data)
+        return decodedObject
+    }
+    
+    func httpPost<T: Codable, R: Codable>(with responseObjectType: T.Type,
+                              url: String, headers: [String: String],
+                              body: R) async throws -> T {
+        let bodyJson = try JSONEncoder().encode(body)
+        
+        let data = try await createSessionRequest(with: .get, url: url, headers: headers, body: bodyJson)
+        
+        let decodedObject = try JSONDecoder().decode(responseObjectType.self, from: data)
+        return decodedObject
+    }
     
     //MARK: - private methods
+    private func createSessionRequest(with httpMethod: HttpMethod?,
+                                     url: String, headers: [String: String], body: Data?) async throws -> Data {
+        let dataURL = URL(string: url)!
+
+        let session = URLSession.shared
+        
+        var request = URLRequest(url: dataURL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: timeoutIntervalSec)
+        request.httpMethod = httpMethod?.rawValue ?? HttpMethod.get.rawValue
+        
+        for (key, value) in headers {
+            request.setValue(key, forHTTPHeaderField: value)
+        }
+        
+        let (data, _) = try await session.data(for: request)
+        return data
+    }
+    
     private func createSessionRequest(with httpMethod: HttpMethod?,
                                                       url: String, headers: [String: String], body: Data?,
                                                       completion: @escaping (Result<Data>) -> Void) {

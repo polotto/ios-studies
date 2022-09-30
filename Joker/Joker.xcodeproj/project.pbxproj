@@ -40,6 +40,13 @@
 		715DC40928E4FEED00ABC893 /* MoreJokesStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC40828E4FEED00ABC893 /* MoreJokesStrings.swift */; };
 		715DC40C28E5070F00ABC893 /* MoreJoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC40B28E5070F00ABC893 /* MoreJoreTableViewCell.swift */; };
 		715DC40F28E5251D00ABC893 /* Jokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC40E28E5251D00ABC893 /* Jokes.swift */; };
+		715DC41228E6539A00ABC893 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC41128E6539A00ABC893 /* Divider.swift */; };
+		715DC41528E6574B00ABC893 /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC41428E6574B00ABC893 /* CustomTableView.swift */; };
+		715DC41828E65A4100ABC893 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC41728E65A4100ABC893 /* MessageService.swift */; };
+		715DC41A28E65A4E00ABC893 /* MessageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC41928E65A4E00ABC893 /* MessageServiceProtocol.swift */; };
+		715DC41D28E660B500ABC893 /* MessageStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 715DC41C28E660B500ABC893 /* MessageStrings.strings */; };
+		715DC41F28E660CD00ABC893 /* MessageStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC41E28E660CD00ABC893 /* MessageStrings.swift */; };
+		715DC42228E72A9B00ABC893 /* String+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC42128E72A9B00ABC893 /* String+Error.swift */; };
 		71A4258428E383BA00237256 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4258328E383BA00237256 /* CustomLabel.swift */; };
 		71A4258728E3905B00237256 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4258628E3905B00237256 /* BaseViewModel.swift */; };
 		71A4258A28E3939C00237256 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4258928E3939C00237256 /* BaseViewController.swift */; };
@@ -100,6 +107,13 @@
 		715DC40828E4FEED00ABC893 /* MoreJokesStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreJokesStrings.swift; sourceTree = "<group>"; };
 		715DC40B28E5070F00ABC893 /* MoreJoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreJoreTableViewCell.swift; sourceTree = "<group>"; };
 		715DC40E28E5251D00ABC893 /* Jokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jokes.swift; sourceTree = "<group>"; };
+		715DC41128E6539A00ABC893 /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
+		715DC41428E6574B00ABC893 /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		715DC41728E65A4100ABC893 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		715DC41928E65A4E00ABC893 /* MessageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageServiceProtocol.swift; sourceTree = "<group>"; };
+		715DC41C28E660B500ABC893 /* MessageStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MessageStrings.strings; sourceTree = "<group>"; };
+		715DC41E28E660CD00ABC893 /* MessageStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageStrings.swift; sourceTree = "<group>"; };
+		715DC42128E72A9B00ABC893 /* String+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Error.swift"; sourceTree = "<group>"; };
 		71A4258328E383BA00237256 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		71A4258628E3905B00237256 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		71A4258928E3939C00237256 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +190,8 @@
 		7123D6DE28E249CB00BBA36B /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				715DC41328E6572C00ABC893 /* TableView */,
+				715DC41028E6538600ABC893 /* Divider */,
 				715DC3FC28E478A600ABC893 /* Styles */,
 				71A4258828E3937D00237256 /* BaseViewController */,
 				71A4258228E383A500237256 /* Label */,
@@ -277,6 +293,8 @@
 		713BE32728DB459F008B3B8C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				715DC42028E72A8400ABC893 /* Error */,
+				715DC41628E65A2B00ABC893 /* MessageService */,
 				71A4258B28E39A4F00237256 /* NavigationService */,
 				71A4258528E38AC800237256 /* BaseViewModel */,
 				7123D6E728E32A4700BBA36B /* NetworkService */,
@@ -330,6 +348,49 @@
 				715DC40B28E5070F00ABC893 /* MoreJoreTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		715DC41028E6538600ABC893 /* Divider */ = {
+			isa = PBXGroup;
+			children = (
+				715DC41128E6539A00ABC893 /* Divider.swift */,
+			);
+			path = Divider;
+			sourceTree = "<group>";
+		};
+		715DC41328E6572C00ABC893 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				715DC41428E6574B00ABC893 /* CustomTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		715DC41628E65A2B00ABC893 /* MessageService */ = {
+			isa = PBXGroup;
+			children = (
+				715DC41B28E65FDE00ABC893 /* Resources */,
+				715DC41728E65A4100ABC893 /* MessageService.swift */,
+				715DC41928E65A4E00ABC893 /* MessageServiceProtocol.swift */,
+			);
+			path = MessageService;
+			sourceTree = "<group>";
+		};
+		715DC41B28E65FDE00ABC893 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				715DC41C28E660B500ABC893 /* MessageStrings.strings */,
+				715DC41E28E660CD00ABC893 /* MessageStrings.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		715DC42028E72A8400ABC893 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				715DC42128E72A9B00ABC893 /* String+Error.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		71A4258228E383A500237256 /* Label */ = {
@@ -480,6 +541,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				715DC41D28E660B500ABC893 /* MessageStrings.strings in Resources */,
 				713BE30328DB4403008B3B8C /* LaunchScreen.storyboard in Resources */,
 				715DC40728E4FED800ABC893 /* MoreJokesStrings.strings in Resources */,
 				7123D6CF28E2402B00BBA36B /* HomeStrings.strings in Resources */,
@@ -513,6 +575,8 @@
 				71A4258428E383BA00237256 /* CustomLabel.swift in Sources */,
 				713BE2FB28DB4400008B3B8C /* HomeViewController.swift in Sources */,
 				7123D6D128E2408E00BBA36B /* HomeStrings.swift in Sources */,
+				715DC41828E65A4100ABC893 /* MessageService.swift in Sources */,
+				715DC41F28E660CD00ABC893 /* MessageStrings.swift in Sources */,
 				7123D6E428E2830E00BBA36B /* Joke.swift in Sources */,
 				715DC40228E47A3200ABC893 /* NavigationServiceProtocol.swift in Sources */,
 				71A4258A28E3939C00237256 /* BaseViewController.swift in Sources */,
@@ -528,13 +592,17 @@
 				7123D6D828E246FD00BBA36B /* HomeViewModel.swift in Sources */,
 				7123D6C828E2287500BBA36B /* UIView+ConstraintHelper.swift in Sources */,
 				7123D6DB28E2489500BBA36B /* ApiService.swift in Sources */,
+				715DC42228E72A9B00ABC893 /* String+Error.swift in Sources */,
 				71A4258728E3905B00237256 /* BaseViewModel.swift in Sources */,
 				713BE2F928DB4400008B3B8C /* SceneDelegate.swift in Sources */,
+				715DC41528E6574B00ABC893 /* CustomTableView.swift in Sources */,
+				715DC41A28E65A4E00ABC893 /* MessageServiceProtocol.swift in Sources */,
 				715DC3F928E39C5C00ABC893 /* MoreJokesViewController.swift in Sources */,
 				715DC40028E47A2500ABC893 /* NavigationService.swift in Sources */,
 				715DC40428E4C8E300ABC893 /* Colors.swift in Sources */,
 				7123D6CB28E238E800BBA36B /* CustomButton.swift in Sources */,
 				7123D6E628E3250400BBA36B /* NetworkService.swift in Sources */,
+				715DC41228E6539A00ABC893 /* Divider.swift in Sources */,
 				715DC3FE28E4792000ABC893 /* Values.swift in Sources */,
 				7123D6D428E241B200BBA36B /* String+Localizable.swift in Sources */,
 			);

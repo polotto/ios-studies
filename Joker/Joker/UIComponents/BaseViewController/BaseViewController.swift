@@ -28,9 +28,13 @@ class BaseViewController: UIViewController {
     //MARK: - public method
     func isBusy(_ isBusy: Bool) {
         if isBusy {
-            showLoading()
+            DispatchQueue.main.async {
+                self.showLoading()
+            }
         } else {
-            hideLoading()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.hideLoading()
+            }
         }
     }
     
