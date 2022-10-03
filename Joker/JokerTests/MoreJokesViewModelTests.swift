@@ -15,6 +15,9 @@ class MoreJokesViewModelTests: XCTestCase {
     
     var viewModel: MoreJokesViewModel!
     
+    // handle wanted exceptions
+    // ui tests
+    
     override func setUpWithError() throws {
         try super.setUpWithError()
         

@@ -796,3 +796,94 @@ date1?.nameOfTheMonth
 date1?.year
 
 ```
+
+## Resources
+### strings
+- https://periclesterto.medium.com/swift-strings-organization-good-practices-37ba694c5e11
+- https://stackoverflow.com/questions/25479984/get-the-name-string-of-a-generic-type-in-swift
+
+### custom button
+- https://stackoverflow.com/questions/10277863/how-to-set-uibutton-type-in-uibutton-subclass#:~:text=You%20cannot%20set%20the%20buttonType,can%20do%20this%20without%20subclassing.
+
+- https://stackoverflow.com/questions/27079681/how-can-i-init-a-uibutton-subclass
+
+- https://useyourloaf.com/blog/button-configuration-in-ios-15/
+
+### safe area
+- https://stackoverflow.com/questions/46317061/how-do-i-use-safe-area-layout-programmatically
+
+### constraints
+- https://blog.devgenius.io/writing-an-extension-for-setting-up-autolayout-constraints-in-swift-b6b5d56aa798
+
+- https://stackoverflow.com/questions/26180822/how-to-add-constraints-programmatically-using-swift
+
+### dictionaries
+- https://developer.apple.com/documentation/swift/dictionary
+
+### json
+- https://www.codingem.com/json-parsing-with-codable-in-swift/#:~:text=In%20Swift%2C%20codability%20means%20being,conform%20to%20the%20Codable%20protocol.&text=If%20you%20only%20want%20to,can%20use%20the%20Decodable%20protocol.
+- https://stackoverflow.com/questions/54301886/what-is-the-simplest-way-to-instantiate-a-new-codable-object-in-swift
+https://stackoverflow.com/questions/16571051/how-to-read-in-a-local-json-file-for-testing
+
+### http
+- https://shresthanabin.medium.com/using-generics-to-handle-get-and-post-requests-swift-3cd8a9285293
+- https://stackoverflow.com/questions/26364914/http-request-in-swift-with-post-method
+- https://stackoverflow.com/questions/24016142/how-to-make-http-request-in-swift
+
+### swift version
+- https://stackoverflow.com/questions/30790188/how-do-i-see-which-version-of-swift-im-using
+
+### loading overlay
+- https://stackoverflow.com/questions/27960556/loading-an-overlay-when-running-long-tasks-in-ios
+
+### swift interface
+- https://stackoverflow.com/questions/45974041/how-to-create-an-interface-in-swift
+
+### mvvm
+- https://medium.com/@abhilash.mathur1891/mvvm-in-ios-swift-aa1448a66fb4
+
+### colors
+- https://stackoverflow.com/questions/24263007/how-to-use-hex-color-values
+- https://materialui.co/colors
+- https://stackoverflow.com/questions/39112879/how-can-i-make-a-swift-enum-with-uicolor-value
+
+### view controller
+- https://stackoverflow.com/questions/26667009/get-top-most-uiviewcontroller
+
+### navbar navigationController
+- https://stackoverflow.com/questions/43706103/how-to-change-navigationitem-title-color
+- https://stackoverflow.com/questions/25167458/changing-navigation-title-programmatically
+- https://stackoverflow.com/questions/24167073/how-to-transition-to-a-new-view-controller-with-code-only-using-swift
+- https://stackoverflow.com/questions/28793331/creating-a-navigationcontroller-programmatically-swift
+
+### messages
+- https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift
+
+### async
+- https://peterfriese.dev/posts/swiftui-concurrency-essentials-part1/
+- https://swiftsenpai.com/swift/async-await-network-requests/
+- https://www.hackingwithswift.com/quick-start/concurrency/whats-the-difference-between-a-task-and-a-detached-task
+- https://www.andyibanez.com/posts/converting-closure-based-code-into-async-await-in-swift/
+
+### internet connection simulator
+- https://stackoverflow.com/questions/4808433/is-it-possible-to-disable-the-network-in-ios-simulator
+
+### errors
+- https://www.advancedswift.com/custom-errors-in-swift/
+
+### tests
+- https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial
+- https://cocoacasts.com/testing-view-models-with-model-view-viewmodel
+- https://www.objc.io/issues/15-testing/xctest/
+
+- https://www.appsdeveloperblog.com/unit-testing-code-that-throws-error-in-swift/
+- https://stackoverflow.com/questions/32860338/how-to-unit-test-throwing-functions-in-swift
+
+- https://tonny.medium.com/how-to-mock-api-in-swift-1e9433caba7e
+
+- https://www.basbroek.nl/xctassert-asterisk
+- https://www.swiftbysundell.com/articles/test-assertions-in-swift/
+
+- https://stackoverflow.com/questions/32008403/no-such-module-when-using-testable-in-xcode-unit-tests
+- https://stackoverflow.com/questions/22131579/xctest-not-registering-new-methods-as-tests
+- https://stackoverflow.com/questions/53568816/how-do-i-use-xctests-to-test-for-print-statements
