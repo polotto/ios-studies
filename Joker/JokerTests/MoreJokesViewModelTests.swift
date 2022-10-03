@@ -32,7 +32,7 @@ class MoreJokesViewModelTests: XCTestCase {
     }
 
     func testReloadData() throws {
-        apiService.load10RandomJokes = .success(Jokes())
+        try apiService.setupLoad10RandomJokes()
         
         viewModel.reloadData = {
             XCTAssertNotNil(self.viewModel.jokes)
@@ -42,8 +42,7 @@ class MoreJokesViewModelTests: XCTestCase {
     }
     
     func testReloadDataFail() throws {
-        let requestError = RequestError.networkError(NSError())
-        apiService.load10RandomJokes = .failure(requestError)
+        let requestError = apiService.setupFailLoad10RandomJokes()
         
         viewModel.reloadData = {
             // the VM can't call this, the message need to be called instead
@@ -57,7 +56,7 @@ class MoreJokesViewModelTests: XCTestCase {
     }
     
     func testTitle() throws {
-        apiService.load10RandomJokes = .success(Jokes())
+        try apiService.setupLoad10RandomJokes()
         
         viewModel.title = { title in
             XCTAssertEqual(title, self.lastJoke.category)

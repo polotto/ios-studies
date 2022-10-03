@@ -34,7 +34,7 @@ class HomeViewModelTests: XCTestCase {
     }
 
     func testReceiveNewJoke() throws {
-        apiService.loadRandomJoke = .success(Joke())
+        try apiService.setupLoadRandomJoke()
         
         viewModel.joke = { (joke, category) in
             XCTAssertNotNil(joke)
@@ -45,9 +45,7 @@ class HomeViewModelTests: XCTestCase {
     }
     
     func testReceiveNewJokeFail() throws {
-        let requestError = RequestError.networkError(NSError())
-        
-        apiService.loadRandomJoke = .failure(requestError)
+        let requestError = apiService.setupFailLoadRandomJoke()
         
         viewModel.joke = { (joke, category) in
             XCTAssertEqual(joke, String())

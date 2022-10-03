@@ -1,0 +1,166 @@
+{
+    "error": false,
+    "amount": 10,
+    "jokes": [
+        {
+            "category": "Programming",
+            "type": "single",
+            "joke": "The glass is neither half-full nor half-empty, the glass is twice as big as it needs to be.",
+            "flags": {
+                "nsfw": false,
+                "religious": false,
+                "political": false,
+                "racist": false,
+                "sexist": false,
+                "explicit": false
+            },
+            "id": 23,
+            "safe": true,
+            "lang": "en"
+        },
+        {
+            "category": "Programming",
+            "type": "single",
+            "joke": "Knock knock.\nWho's there?\nRecursion.\nRecursion who?\nKnock knock.",
+            "flags": {
+                "nsfw": false,
+                "religious": false,
+                "political": false,
+                "racist": false,
+                "sexist": false,
+                "explicit": false
+            },
+            "id": 180,
+            "safe": true,
+            "lang": "en"
+        },
+        {
+            "category": "Programming",
+            "type": "single",
+            "joke": "\"Honey, go to the store and buy some eggs.\"\n\"OK.\"\n\"Oh and while you're there, get some milk.\"\nHe never returned.",
+            "flags": {
+                "nsfw": false,
+                "religious": false,
+                "political": false,
+                "racist": false,
+                "sexist": false,
+                "explicit": false
+            },
+            "id": 18,
+            "safe": true,
+            "lang": "en"
+        },
+        {
+            "category": "Programming",
+            "type": "single",
+            "joke": "A guy walks into a bar and asks for 1.4 root beers.\nThe bartender says \"I'll have to charge you extra, that's a root beer float\".\nThe guy says \"In that case, better make it a double.\"",
+            "flags": {
+                "nsfw": false,
+                "religious": false,
+                "political": false,
+                "racist": false,
+                "sexist": false,
+                "explicit": false
+            },
+            "id": 2,
+            "safe": true,
+            "lang": "en"
+        },
+        {
+            "category": "Programming",
+            "type": "single",
+            "joke": "If Bill Gates had a dime for every time Windows crashed ... Oh wait, he does.",
+            "flags": {
+                "nsfw": false,
+                "religious": false,
+                "political": false,
+                "racist": false,
+                "sexist": false,
+                "explicit": false
+            },
+            "id": 22,
+            "safe": true,
+            "lang": "en"
+        },
+        {
+            "category": "Programming",
+            "type": "single",
+            "joke": "The six stages of debugging:\n1. That can't happen.\n2. That doesn't happen on my machine.\n3. That shouldn't happen.\n4. Why does that happen?\n5. Oh, I see.\n6. How did that ever work?",
+            "flags": {
+                "nsfw": false,
+                "religious": false,
+                "political": false,
+                "racist": false,
+                "sexist": false,
+                "explicit": false
+            },
+            "id": 123,
+            "safe": true,
+            "lang": "en"
+        },
+        {
+            "category": "Programming",
+            "type": "single",
+            "joke": "A man is smoking a cigarette and blowing smoke rings into the air. His girlfriend becomes irritated with the smoke and says \"Can't you see the warning on the cigarette pack? Smoking is hazardous to your health!\" to which the man replies, \"I am a programmer.  We don't worry about warnings; we only worry about errors.\"",
+            "flags": {
+                "nsfw": false,
+                "religious": false,
+                "political": false,
+                "racist": false,
+                "sexist": false,
+                "explicit": false
+            },
+            "id": 38,
+            "safe": true,
+            "lang": "en"
+        },
+        {
+            "category": "Programming",
+            "type": "single",
+            "joke": "// This line doesn't actually do anything, but the code stops working when I delete it.",
+            "flags": {
+                "nsfw": false,
+                "religious": false,
+                "political": false,
+                "racist": false,
+                "sexist": false,
+                "explicit": false
+            },
+            "id": 12,
+            "safe": true,
+            "lang": "en"
+        },
+        {
+            "category": "Programming",
+            "type": "single",
+            "joke": "There are only 10 kinds of people in this world: those who know binary and those who don't.",
+            "flags": {
+                "nsfw": false,
+                "religious": false,
+                "political": false,
+                "racist": false,
+                "sexist": false,
+                "explicit": false
+            },
+            "id": 35,
+            "safe": true,
+            "lang": "en"
+        },
+        {
+            "category": "Programming",
+            "type": "single",
+            "joke": "I've got a really good UDP joke to tell you but I don’t know if you'll get it.",
+            "flags": {
+                "nsfw": false,
+                "religious": false,
+                "political": false,
+                "racist": false,
+                "sexist": false,
+                "explicit": false
+            },
+            "id": 0,
+            "safe": true,
+            "lang": "en"
+        }
+    ]
+}

@@ -55,6 +55,8 @@
 		71A4258428E383BA00237256 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4258328E383BA00237256 /* CustomLabel.swift */; };
 		71A4258728E3905B00237256 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4258628E3905B00237256 /* BaseViewModel.swift */; };
 		71A4258A28E3939C00237256 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4258928E3939C00237256 /* BaseViewController.swift */; };
+		71B5038228EB83B500C48B67 /* get_joke.json in Resources */ = {isa = PBXBuildFile; fileRef = 71B5038128EB83B500C48B67 /* get_joke.json */; };
+		71B5038628EB840000C48B67 /* get_10_jokes.json in Resources */ = {isa = PBXBuildFile; fileRef = 71B5038528EB840000C48B67 /* get_10_jokes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +137,8 @@
 		71A4258328E383BA00237256 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		71A4258628E3905B00237256 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		71A4258928E3939C00237256 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		71B5038128EB83B500C48B67 /* get_joke.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = get_joke.json; sourceTree = "<group>"; };
+		71B5038528EB840000C48B67 /* get_10_jokes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = get_10_jokes.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +360,7 @@
 		714B9F0328EB1D4100250621 /* MockObjects */ = {
 			isa = PBXGroup;
 			children = (
+				71B5038028EB839800C48B67 /* Jsons */,
 				714B9F0428EB1D7800250621 /* ApiServiceMock.swift */,
 				714B9F0628EB1E5F00250621 /* NavigationServiceMock.swift */,
 				714B9F0828EB1EBB00250621 /* MessageServiceMock.swift */,
@@ -482,6 +487,15 @@
 				715DC3FA28E39C6A00ABC893 /* MoreJokesViewModel.swift */,
 			);
 			path = MoreJokes;
+			sourceTree = "<group>";
+		};
+		71B5038028EB839800C48B67 /* Jsons */ = {
+			isa = PBXGroup;
+			children = (
+				71B5038128EB83B500C48B67 /* get_joke.json */,
+				71B5038528EB840000C48B67 /* get_10_jokes.json */,
+			);
+			path = Jsons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -623,6 +637,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71B5038628EB840000C48B67 /* get_10_jokes.json in Resources */,
+				71B5038228EB83B500C48B67 /* get_joke.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
