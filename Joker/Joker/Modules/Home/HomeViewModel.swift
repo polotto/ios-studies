@@ -37,7 +37,7 @@ class HomeViewModel: BaseViewModel {
                 lastJoke = jokeObj
                 self.joke?(jokeObj.joke, jokeObj.category)
             case .failure(let error):
-                messageService.error(error.localizedDescription) {
+                messageService.error(error.description) {
                     self.isBusy?(false)
                 }
                 self.joke?(String(), String())

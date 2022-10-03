@@ -17,7 +17,7 @@ class MoreJokesViewModel: BaseViewModel {
     var jokes: Jokes?
     
     //MARK: - initializers
-    init(lastJoke: Joke, apiService: ApiService, messageService: MessageServiceProtocol) {
+    init(lastJoke: Joke, apiService: ApiServiceProtocol, messageService: MessageServiceProtocol) {
         self.lastJoke = lastJoke
         self.apiService = apiService
         self.messageService = messageService
@@ -34,7 +34,8 @@ class MoreJokesViewModel: BaseViewModel {
                 self.reloadData?()
                 self.isBusy?(false)
             } catch {
-                await messageService.error(error.localizedDescription)
+                let err = error as? RequestError
+                await messageService.error(err?.description ?? RequestError.unknown.description)
                 self.reloadData?()
                 self.isBusy?(false)
             }

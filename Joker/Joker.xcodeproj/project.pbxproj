@@ -27,9 +27,14 @@
 		713BE2FB28DB4400008B3B8C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713BE2FA28DB4400008B3B8C /* HomeViewController.swift */; };
 		713BE30028DB4403008B3B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 713BE2FF28DB4403008B3B8C /* Assets.xcassets */; };
 		713BE30328DB4403008B3B8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713BE30128DB4403008B3B8C /* LaunchScreen.storyboard */; };
-		713BE30E28DB4403008B3B8C /* JokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713BE30D28DB4403008B3B8C /* JokerTests.swift */; };
 		713BE31828DB4403008B3B8C /* JokerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713BE31728DB4403008B3B8C /* JokerUITests.swift */; };
 		713BE31A28DB4403008B3B8C /* JokerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713BE31928DB4403008B3B8C /* JokerUITestsLaunchTests.swift */; };
+		714B9F0528EB1D7800250621 /* ApiServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B9F0428EB1D7800250621 /* ApiServiceMock.swift */; };
+		714B9F0728EB1E5F00250621 /* NavigationServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B9F0628EB1E5F00250621 /* NavigationServiceMock.swift */; };
+		714B9F0928EB1EBB00250621 /* MessageServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B9F0828EB1EBB00250621 /* MessageServiceMock.swift */; };
+		714B9F0B28EB2D3100250621 /* MoreJokesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B9F0A28EB2D3100250621 /* MoreJokesViewModelTests.swift */; };
+		714B9F0D28EB2D6E00250621 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B9F0C28EB2D6E00250621 /* HomeViewModelTests.swift */; };
+		714B9F1528EB568400250621 /* JokerApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B9F1428EB568400250621 /* JokerApiServiceTests.swift */; };
 		715DC3F928E39C5C00ABC893 /* MoreJokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC3F828E39C5C00ABC893 /* MoreJokesViewController.swift */; };
 		715DC3FB28E39C6A00ABC893 /* MoreJokesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC3FA28E39C6A00ABC893 /* MoreJokesViewModel.swift */; };
 		715DC3FE28E4792000ABC893 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DC3FD28E4791F00ABC893 /* Values.swift */; };
@@ -67,6 +72,13 @@
 			remoteGlobalIDString = 713BE2F228DB4400008B3B8C;
 			remoteInfo = Joker;
 		};
+		714B9F1628EB568400250621 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 713BE2EB28DB4400008B3B8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 713BE2F228DB4400008B3B8C;
+			remoteInfo = Joker;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -93,10 +105,16 @@
 		713BE30228DB4403008B3B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		713BE30428DB4403008B3B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		713BE30928DB4403008B3B8C /* JokerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JokerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		713BE30D28DB4403008B3B8C /* JokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokerTests.swift; sourceTree = "<group>"; };
 		713BE31328DB4403008B3B8C /* JokerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JokerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		713BE31728DB4403008B3B8C /* JokerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokerUITests.swift; sourceTree = "<group>"; };
 		713BE31928DB4403008B3B8C /* JokerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		714B9F0428EB1D7800250621 /* ApiServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceMock.swift; sourceTree = "<group>"; };
+		714B9F0628EB1E5F00250621 /* NavigationServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationServiceMock.swift; sourceTree = "<group>"; };
+		714B9F0828EB1EBB00250621 /* MessageServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageServiceMock.swift; sourceTree = "<group>"; };
+		714B9F0A28EB2D3100250621 /* MoreJokesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreJokesViewModelTests.swift; sourceTree = "<group>"; };
+		714B9F0C28EB2D6E00250621 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		714B9F1228EB568300250621 /* JokerIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JokerIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		714B9F1428EB568400250621 /* JokerApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokerApiServiceTests.swift; sourceTree = "<group>"; };
 		715DC3F828E39C5C00ABC893 /* MoreJokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreJokesViewController.swift; sourceTree = "<group>"; };
 		715DC3FA28E39C6A00ABC893 /* MoreJokesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreJokesViewModel.swift; sourceTree = "<group>"; };
 		715DC3FD28E4791F00ABC893 /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
@@ -135,6 +153,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		713BE31028DB4403008B3B8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		714B9F0F28EB568300250621 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -235,6 +260,7 @@
 			children = (
 				713BE2F528DB4400008B3B8C /* Joker */,
 				713BE30C28DB4403008B3B8C /* JokerTests */,
+				714B9F1328EB568400250621 /* JokerIntegrationTests */,
 				713BE31628DB4403008B3B8C /* JokerUITests */,
 				713BE2F428DB4400008B3B8C /* Products */,
 			);
@@ -246,6 +272,7 @@
 				713BE2F328DB4400008B3B8C /* Joker.app */,
 				713BE30928DB4403008B3B8C /* JokerTests.xctest */,
 				713BE31328DB4403008B3B8C /* JokerUITests.xctest */,
+				714B9F1228EB568300250621 /* JokerIntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -265,7 +292,9 @@
 		713BE30C28DB4403008B3B8C /* JokerTests */ = {
 			isa = PBXGroup;
 			children = (
-				713BE30D28DB4403008B3B8C /* JokerTests.swift */,
+				714B9F0C28EB2D6E00250621 /* HomeViewModelTests.swift */,
+				714B9F0A28EB2D3100250621 /* MoreJokesViewModelTests.swift */,
+				714B9F0328EB1D4100250621 /* MockObjects */,
 			);
 			path = JokerTests;
 			sourceTree = "<group>";
@@ -322,6 +351,24 @@
 				71A4258C28E39BD400237256 /* MoreJokes */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		714B9F0328EB1D4100250621 /* MockObjects */ = {
+			isa = PBXGroup;
+			children = (
+				714B9F0428EB1D7800250621 /* ApiServiceMock.swift */,
+				714B9F0628EB1E5F00250621 /* NavigationServiceMock.swift */,
+				714B9F0828EB1EBB00250621 /* MessageServiceMock.swift */,
+			);
+			path = MockObjects;
+			sourceTree = "<group>";
+		};
+		714B9F1328EB568400250621 /* JokerIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				714B9F1428EB568400250621 /* JokerApiServiceTests.swift */,
+			);
+			path = JokerIntegrationTests;
 			sourceTree = "<group>";
 		};
 		715DC3FC28E478A600ABC893 /* Styles */ = {
@@ -493,6 +540,24 @@
 			productReference = 713BE31328DB4403008B3B8C /* JokerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		714B9F1128EB568300250621 /* JokerIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 714B9F1828EB568400250621 /* Build configuration list for PBXNativeTarget "JokerIntegrationTests" */;
+			buildPhases = (
+				714B9F0E28EB568300250621 /* Sources */,
+				714B9F0F28EB568300250621 /* Frameworks */,
+				714B9F1028EB568300250621 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				714B9F1728EB568400250621 /* PBXTargetDependency */,
+			);
+			name = JokerIntegrationTests;
+			productName = JokerIntegrationTests;
+			productReference = 714B9F1228EB568300250621 /* JokerIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -514,6 +579,10 @@
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = 713BE2F228DB4400008B3B8C;
 					};
+					714B9F1128EB568300250621 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 713BE2F228DB4400008B3B8C;
+					};
 				};
 			};
 			buildConfigurationList = 713BE2EE28DB4400008B3B8C /* Build configuration list for PBXProject "Joker" */;
@@ -532,6 +601,7 @@
 				713BE2F228DB4400008B3B8C /* Joker */,
 				713BE30828DB4403008B3B8C /* JokerTests */,
 				713BE31228DB4403008B3B8C /* JokerUITests */,
+				714B9F1128EB568300250621 /* JokerIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -557,6 +627,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		713BE31128DB4403008B3B8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		714B9F1028EB568300250621 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -612,7 +689,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				713BE30E28DB4403008B3B8C /* JokerTests.swift in Sources */,
+				714B9F0D28EB2D6E00250621 /* HomeViewModelTests.swift in Sources */,
+				714B9F0B28EB2D3100250621 /* MoreJokesViewModelTests.swift in Sources */,
+				714B9F0528EB1D7800250621 /* ApiServiceMock.swift in Sources */,
+				714B9F0728EB1E5F00250621 /* NavigationServiceMock.swift in Sources */,
+				714B9F0928EB1EBB00250621 /* MessageServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +703,14 @@
 			files = (
 				713BE31A28DB4403008B3B8C /* JokerUITestsLaunchTests.swift in Sources */,
 				713BE31828DB4403008B3B8C /* JokerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		714B9F0E28EB568300250621 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				714B9F1528EB568400250621 /* JokerApiServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +726,11 @@
 			isa = PBXTargetDependency;
 			target = 713BE2F228DB4400008B3B8C /* Joker */;
 			targetProxy = 713BE31428DB4403008B3B8C /* PBXContainerItemProxy */;
+		};
+		714B9F1728EB568400250621 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 713BE2F228DB4400008B3B8C /* Joker */;
+			targetProxy = 714B9F1628EB568400250621 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -773,6 +867,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A2HMKZ2KH4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Joker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -784,7 +879,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joker.Joker;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.polotto.joker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -799,6 +894,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A2HMKZ2KH4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Joker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -810,7 +906,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joker.Joker;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.polotto.joker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -890,6 +986,40 @@
 			};
 			name = Release;
 		};
+		714B9F1928EB568400250621 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joker.JokerIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Joker.app/Joker";
+			};
+			name = Debug;
+		};
+		714B9F1A28EB568400250621 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joker.JokerIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Joker.app/Joker";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -925,6 +1055,15 @@
 			buildConfigurations = (
 				713BE32428DB4403008B3B8C /* Debug */,
 				713BE32528DB4403008B3B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		714B9F1828EB568400250621 /* Build configuration list for PBXNativeTarget "JokerIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				714B9F1928EB568400250621 /* Debug */,
+				714B9F1A28EB568400250621 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
