@@ -825,6 +825,9 @@ date1?.year
 - https://stackoverflow.com/questions/54301886/what-is-the-simplest-way-to-instantiate-a-new-codable-object-in-swift
 https://stackoverflow.com/questions/16571051/how-to-read-in-a-local-json-file-for-testing
 
+- https://stackoverflow.com/questions/46740160/swift-decodable-optional-key
+- https://medium.com/doyeona/codable-decodable-encodable-feat-json-5643dc3d7766
+
 ### http
 - https://shresthanabin.medium.com/using-generics-to-handle-get-and-post-requests-swift-3cd8a9285293
 - https://stackoverflow.com/questions/26364914/http-request-in-swift-with-post-method
@@ -875,7 +878,9 @@ https://stackoverflow.com/questions/16571051/how-to-read-in-a-local-json-file-fo
 - https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial
 - https://cocoacasts.com/testing-view-models-with-model-view-viewmodel
 - https://www.objc.io/issues/15-testing/xctest/
+- https://medium.com/@koromikoneo/the-complete-guide-to-network-unit-testing-in-swift-db8b3ee2c327
 
+- https://sarunw.com/posts/testing-delegates-and-protocols-in-xctest/
 - https://www.appsdeveloperblog.com/unit-testing-code-that-throws-error-in-swift/
 - https://stackoverflow.com/questions/32860338/how-to-unit-test-throwing-functions-in-swift
 
@@ -887,3 +892,13 @@ https://stackoverflow.com/questions/16571051/how-to-read-in-a-local-json-file-fo
 - https://stackoverflow.com/questions/32008403/no-such-module-when-using-testable-in-xcode-unit-tests
 - https://stackoverflow.com/questions/22131579/xctest-not-registering-new-methods-as-tests
 - https://stackoverflow.com/questions/53568816/how-do-i-use-xctests-to-test-for-print-statements
+
+### delegate
+- https://stackoverflow.com/questions/24066304/how-can-i-make-a-weak-protocol-reference-in-pure-swift-without-objc
+
+### retain cycles
+- https://medium.com/mackmobile/avoiding-retain-cycles-in-swift-7b08d50fe3ef
+- https://stackoverflow.com/questions/24231680/loading-downloading-image-from-url-on-swift
+
+### view code
+- https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/
